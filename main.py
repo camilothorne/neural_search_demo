@@ -4,10 +4,12 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import numpy as np
 from collections import Counter
+import matplotlib.pyplot as plt
 
 from neural_search.sent_encoder import SentEncode
 from neural_search.faiss_vdb import FaissIndex
 from neural_search.evaluation import EvaluateResults
+from neural_search.cross_encoder import ReRanker
 
 
 def load_cranfield()->pd.DataFrame:
@@ -46,12 +48,13 @@ def split_data(df_r:pd.DataFrame,
     train_data = df_r[~df_r.query_id.isin(test)]
     test_data  = df_r[df_r.query_id.isin(test)]
     
-    print(f'* Number of unique rain queries:   {len(query_ids.keys())}')
+    print(f'* Number of unique train queries:   {len(query_ids.keys())}')
     print(f'* Number of unique test queries:    {len(test)}')
     print(f'* Number of unique train documents: {len(pd.unique(train_data.doc_id))}')
     print(f'* Number of unique test documents:  {len(pd.unique(test_data.doc_id))}')
     print(f'* Train data shape: {train_data.shape}, test data shape: {test_data.shape}')
     return train_data, test_data
+
 
 def embedd_and_index_data(df_r:pd.DataFrame, 
                           find:FaissIndex, 
@@ -73,11 +76,6 @@ def embedd_and_index_data(df_r:pd.DataFrame,
     print(f'* Index size: {find.index.ntotal} vectors of 384 dimensions')
     return ind_map
 
-# def count_maps(df:pd.DataFrame, item:str, col:str)->int:
-#     '''
-#     Count occurrences of a given item
-#     '''
-#     return df[df[col]==item].shape[0]
 
 def query_eval(test_query:str, 
                enc:SentEncode, 
@@ -106,6 +104,7 @@ def query_eval(test_query:str,
         ['text', 'doc_id']], on='doc_id', how='inner').drop_duplicates(keep='first')
     eval = EvaluateResults(df_ans, len(miss_docs))
     return eval.compute_performance()
+
 
 def corpus_eval(test_data:pd.DataFrame, 
                enc:SentEncode, 
@@ -180,3 +179,10 @@ if __name__ == '__main__':
     corpus_eval_result = corpus_eval(test_data, enc, merged_data, k)
     print()
     print(corpus_eval_result.head(k))
+    #corpus_eval_result.plot(kind='bar')
+    #plt.show()
+
+    # Reranking
+    rerank = ReRanker()
+    rerank.example()
+

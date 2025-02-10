@@ -8,6 +8,7 @@ class ReRanker:
         '''
         Instantiate model
         '''
+        print("\n==> Reranking...\n")
         self.model = CrossEncoder("cross-encoder/stsb-distilroberta-base")
 
 
@@ -28,6 +29,17 @@ class ReRanker:
         ]
         # Rerank
         self.rerank(query, corpus)
+        # Score single sentence
+        example = "A cheetah is running behind its prey."
+        score = self.score_pair(query, example)
+        print(f"\n* Query: {query}, sentence: {example}, score: {score:.5f}")
+
+
+    def score_pair(self, query, sentence):
+        '''
+        Compute similarity score between query and sentence
+        '''
+        return self.model.predict([query, sentence])
 
 
     def rerank(self, query, corpus):
@@ -39,9 +51,10 @@ class ReRanker:
         ranks = self.model.rank(query, corpus)
 
         # Print the scores
-        print("Query:", query)
+        print("* Query:", query)
         for rank in ranks:
-            print(f"{rank['score']:.2f}\t{corpus[rank['corpus_id']]}")
+            print(f"\t{rank}")
+            print(f"\t{rank['score']:.2f}\t{corpus[rank['corpus_id']]}")
 
         # 2. Alternatively, you can also manually compute the score between two sentences
         sentence_combinations = [[query, sentence] for sentence in corpus]
@@ -49,5 +62,5 @@ class ReRanker:
 
         # Sort the scores in decreasing order to get the corpus indices
         ranked_indices = np.argsort(scores)[::-1]
-        print("scores:", scores)
-        print("indices:", ranked_indices)
+        print("* Scores:", scores)
+        print("* Indices:", ranked_indices)
