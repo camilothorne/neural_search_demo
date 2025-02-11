@@ -129,6 +129,51 @@ def corpus_eval(test_data:pd.DataFrame,
     return df_res
 
 
+def query_rerank(test_query:str, 
+               rank:ReRanker, 
+               df_ans:pd.DataFrame)->pd.DataFrame:
+    '''
+    Run query on index and measure:
+
+        p@j, r@j, f1@j, for 1 =< j =< k 
+    
+    '''
+
+    df_ans['rerank'] = df_ans.text.apply(lambda x: rank.score_pair(test_query, x))
+    ans_docs = list(df_ans['doc_id'].values)
+    rel_docs = list(merged_data[
+        merged_data['query']==test_query]['doc_id'].values)
+    miss_docs = set(rel_docs).difference(set(ans_docs))                       
+    df_ans['relevant'] = df_ans['doc_id'].apply(
+        lambda x: 'yes' if x in rel_docs else 'no')
+    df_ans = df_ans.merge(merged_data[
+        ['text', 'doc_id']], on='doc_id', how='inner').drop_duplicates(keep='first')
+    eval = EvaluateResults(df_ans, len(miss_docs), rank='rerank')
+    return eval.compute_performance()
+
+
+def corpus_rerank(test_data:pd.DataFrame, 
+               rank:ReRanker, 
+               df_ans:pd.DataFrame)->pd.DataFrame:
+    '''
+    Run all queries on idex and measure:
+
+        micro-averaged p@i, r@i, f1@i, for 1 =< i =< k
+    
+    '''
+    print('\n==> Evaluation across test set...\n')
+    df_q = test_data[['query', 'query_id', 'query_docs']].drop_duplicates(keep='first')
+    print(f'* Shape of test set (queries):\t{df_q.shape}')
+    print(f'* Test set snapshot:\n{df_q.sort_values(by="query_docs").head(20)}')
+    results = []
+    for _, row in df_q.iterrows():
+        eval_result = query_rerank(row['query'], rank, df_ans)
+        results.append(eval_result)
+    df_c = pd.concat(results)
+    df_res = df_c.groupby(level=0).mean(numeric_only=True)
+    return df_res
+
+
 if __name__ == '__main__':
 
     num_test_queries = 5
@@ -171,18 +216,47 @@ if __name__ == '__main__':
     print(f'* Shape of answers:\t{df_ans.shape}')
     print(f'* Top answers for test query:\n\n{df_ans.head()}')
 
-    # Evaluation
-    eval = EvaluateResults(df_ans, len(miss_docs))
+    # Evaluation on test query
+    query_eval_result = query_eval(test_query, enc, merged_data, k)
     print()
-    print(eval.compute_performance().head(k))
+    print(query_eval_result.head(k))
+    #query_eval_result.plot(kind='line', xlabel='ranking', ylabel='scores', title='Base')
+    #plt.xticks(fontsize=8)
+    #plt.yticks(fontsize=8)
+    #plt.show()
 
+    # Evaluation across test set
     corpus_eval_result = corpus_eval(test_data, enc, merged_data, k)
     print()
     print(corpus_eval_result.head(k))
-    #corpus_eval_result.plot(kind='bar')
-    #plt.show()
+    corpus_eval_result.plot(kind='line', 
+                            xlabel='ranking', 
+                            ylabel='scores', 
+                            title='Base search')
+    plt.xticks(fontsize=8)
+    plt.yticks(fontsize=8)
+    plt.show()
 
     # Reranking
     rerank = ReRanker()
-    rerank.example()
 
+    # Evaluation on test query
+    query_rerank_result = query_rerank(test_query, rerank, df_ans)
+    print()
+    print(query_eval_result.head(k))
+    #query_rerank_result.plot(kind='line', xlabel='ranking', ylabel='scores', title='Reranked')
+    #plt.xticks(fontsize=8)
+    #plt.yticks(fontsize=8)
+    #plt.show()
+
+    # Evaluation across test set
+    corpus_rerank_result = corpus_rerank(test_data, rerank, df_ans)
+    print()
+    print(corpus_rerank_result.head(k))
+    corpus_rerank_result.plot(kind='line',
+                              xlabel='ranking', 
+                              ylabel='scores', 
+                              title='Reranked hits')
+    plt.xticks(fontsize=8)
+    plt.yticks(fontsize=8)
+    plt.show()

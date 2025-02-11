@@ -8,7 +8,8 @@ class FaissIndex:
         '''
         Initialize the FaissIndex
 
-        d: dimension
+        Args:
+            d: dimension
         '''
         self.d = d
         self.index = faiss.IndexFlatL2(self.d)
@@ -17,10 +18,16 @@ class FaissIndex:
     def update_index(self, xb):
         '''
         Building the index
+        Args:
+            xb: vectors to be indexed
         '''
         self.index.add(xb) # add vectors to the index
 
+
     def is_non_empty(self):
+        '''
+        Checks if index is trained / populated
+        '''
         print(f'Index is trained? {self.index.is_trained}')
 
 
@@ -28,8 +35,12 @@ class FaissIndex:
         '''
         Search for nearest neighbors
 
-        xq: queries
-        k: number of nearest neighbors
+        Args:
+            xq: queries
+            k: number of nearest neighbors
+        Returns:
+            D: distances
+            I: indices of the nearest neighbors
         '''
         D, I = self.index.search(xq, k)
         return D, I

@@ -4,15 +4,22 @@ from sentence_transformers.cross_encoder import CrossEncoder
 
 class ReRanker:
 
-    def __init__(self, path="cross-encoder/stsb-distilroberta-base"):
+    def __init__(self, path:str="cross-encoder/stsb-distilroberta-base"):
         '''
         Instantiate model
+        Args:
+            path: path to the pre-trained cross-encoder model
         '''
         print("\n==> Reranking...\n")
-        self.model = CrossEncoder("cross-encoder/stsb-distilroberta-base")
+        self.model = CrossEncoder(path)
 
 
     def example(self):
+        '''
+        Example usage:
+        Create an instance of ReRanker
+        Run example() method to test the reranker
+        '''
         # We want to compute the similarity between the query sentence
         query = "A man is eating pasta."
         # With all sentences in the corpus
@@ -35,16 +42,24 @@ class ReRanker:
         print(f"\n* Query: {query}, sentence: {example}, score: {score:.5f}")
 
 
-    def score_pair(self, query, sentence):
+    def score_pair(self, query:str, sentence:str)->float:
         '''
         Compute similarity score between query and sentence
+        Args:
+            query: query sentence
+            sentence: sentence to be scored
+        Returns:
+            similarity score
         '''
         return self.model.predict([query, sentence])
 
 
-    def rerank(self, query, corpus):
+    def rerank(self, query:str, corpus:list[str])->None:
         ''' 
         Rerank answer set based on query
+        Args:
+            query: query sentence
+            corpus: list of sentences to be scored/reranked
         '''
 
         # 1. We rank all sentences in the corpus for the query
