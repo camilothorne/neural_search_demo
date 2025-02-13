@@ -4,17 +4,16 @@ from sentence_transformers.cross_encoder import CrossEncoder
 
 class ReRanker:
 
-    def __init__(self, path:str="cross-encoder/stsb-distilroberta-base"):
+    def __init__(self, path:str="cross-encoder/stsb-distilroberta-base")->None:
         '''
         Instantiate model
         Args:
             path: path to the pre-trained cross-encoder model
         '''
-        print("\n==> Reranking...\n")
         self.model = CrossEncoder(path)
 
 
-    def example(self):
+    def example(self)->None:
         '''
         Example usage:
         Create an instance of ReRanker
@@ -54,7 +53,7 @@ class ReRanker:
         return self.model.predict([query, sentence])
 
 
-    def rerank(self, query:str, corpus:list[str])->None:
+    def rerank_corpus(self, query:str, corpus:list[str])->None:
         ''' 
         Rerank answer set based on query
         Args:
