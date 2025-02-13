@@ -18,7 +18,7 @@ class BM25Index:
         corpus_tokens = bm25s.tokenize(corpus, stopwords="en")
         self.index.index(corpus_tokens) # index documents
 
-    def search(self, query:str, k:int)->tuple[np.array, np.array]:
+    def search_index(self, query:str, k:int)->tuple[np.array, np.array]:
         '''
         Search for nearest neighbors
         Args:
@@ -29,5 +29,5 @@ class BM25Index:
             I: indices of the nearest neighbors
         '''
         query_tokens = bm25s.tokenize(query, stopwords="en")
-        D, I = self.index.retrieve(query_tokens, k=k)
+        I, D = self.index.retrieve(query_tokens, k=k)
         return D, I

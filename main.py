@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 from collections import Counter
 import matplotlib.pyplot as plt
+import time
 
 from neural_search.sent_encoder import SentEncode
 from neural_search.faiss_vdb import FaissIndex
@@ -68,6 +69,7 @@ def embedd_and_index_data(df_r:pd.DataFrame,
     '''
     print(f'\n==> Embedding and indexing corpus (bi-encoder + FAISS + L2 norm)...\n')
     
+    begin = time.time()
     df_r = df_r[['text', 'doc_id']].drop_duplicates(keep='first').reset_index()
     vectors = np.zeros((df_r.shape[0], 384))
     ind_map = {}
@@ -76,9 +78,11 @@ def embedd_and_index_data(df_r:pd.DataFrame,
         ind_map[ind] = row['doc_id']
     r, c = vectors.shape
     find.update_index(vectors)
+    end = time.time()
     
     print(f'* Vector data shape: ({r}, {c})')
     print(f'* Index size: {find.index.ntotal} vectors of 384 dimensions')
+    print(f'* Time taken: {end-begin:.2f}s')
     
     return ind_map
 
@@ -90,82 +94,96 @@ def bm25_index_data(df_r:pd.DataFrame,
     '''
     print(f'\n==> Indexing corpus (BM25)...\n')
     
+    begin = time.time()
     df_r = df_r[['text', 'doc_id']].drop_duplicates(keep='first').reset_index()
     corpus = list(df_r.text.values)
     ind_map = {}
     for ind, row in df_r.iterrows():
         ind_map[ind] = row['doc_id']
     bm25.update_index(corpus)
+    end = time.time()
 
     print(f'* Indexed {len(corpus)} documents')
+    print(f'* Time taken: {end-begin:.2f}s')
 
     return ind_map
 
 
-# def query_eval_bm25(test_query:str,  
-#                     merged_data:pd.DataFrame,
-#                     k:int,
-#                     ind_map:dict,
-#                     ddb:BM25Index)->pd.DataFrame:
-#     '''
-#     Run query on index and measure:
+def query_eval_bm25(in_query:str,  
+                    merged_data:pd.DataFrame,
+                    k:int,
+                    ind_map:dict,
+                    ddb:BM25Index,
+                    print_res:bool=True)->pd.DataFrame:
+    '''
+    Run query on index and measure:
 
-#         p@j, r@j, f1@j, for 1 =< j =< k 
+        p@j, r@j, f1@j, for 1 =< j =< k 
     
-#     '''
-#     D, I = ddb.search(test_query, k) # Query index
-#     df_ans = pd.DataFrame()
-#     df_ans['scores'] = D[0]
-#     df_ans['doc_id'] = I[0]
-#     df_ans['doc_id'] = df_ans['doc_id'].apply(lambda x: ind_map[x])
-#     ans_docs = list(df_ans['doc_id'].values)
-#     rel_docs = list(merged_data[
-#         merged_data['query']==test_query]['doc_id'].values)
-#     miss_docs = set(rel_docs).difference(set(ans_docs))                       
-#     df_ans['relevant'] = df_ans['doc_id'].apply(
-#         lambda x: 'yes' if x in rel_docs else 'no')
-#     df_ans = df_ans.merge(merged_data[
-#         ['text', 'doc_id']], on='doc_id', how='inner').drop_duplicates(keep='first')
-#     eval = EvaluateResults(df_ans, len(miss_docs))
+    '''
+    D, I = ddb.search_index(in_query, k) # Query index
+    df_ans = pd.DataFrame()
+    df_ans['bm25'] = D[0]
+    df_ans['doc_id'] = I[0]
+    df_ans['doc_id'] = df_ans['doc_id'].apply(lambda x: ind_map[x])
+    ans_docs = list(df_ans['doc_id'].values)
+    rel_docs = list(merged_data[
+        merged_data['query']==in_query]['doc_id'].values)
+    miss_docs = set(rel_docs).difference(set(ans_docs))                       
+    df_ans['relevant'] = df_ans['doc_id'].apply(
+        lambda x: 'yes' if x in rel_docs else 'no')
+    df_ans = df_ans.merge(merged_data[
+        ['text', 'doc_id']], on='doc_id', how='inner').drop_duplicates(keep='first')
+    eval = EvaluateResults(df_ans, len(miss_docs), rank='bm25')
     
-#     print(f'* Test query:\t{test_query}')
-#     print(f'* Size of answer set:\t{k}')
-#     print(f'* Total relevant documents:\t{len(rel_docs)}')
-#     print(f'* Missing relevant documents:\t{len(miss_docs)}')
-#     print(f'* Retrieved relevant documents:\t{df_ans[df_ans["relevant"]=="yes"].shape[0]}')
-#     print(f'* Shape of answers:\t{df_ans.shape}')
-#     print(f'* Top answers for test query:\n\n{df_ans.head()}\n')
+    if print_res:
+        print(f'* Test query:\t{in_query}')
+        print(f'* Size of answer set:\t{k}')
+        print(f'* Total relevant documents:\t{len(rel_docs)}')
+        print(f'* Missing relevant documents:\t{len(miss_docs)}')
+        print(f'* Retrieved relevant documents:\t{df_ans[df_ans["relevant"]=="yes"].shape[0]}')
+        print(f'* Shape of answers:\t{df_ans.shape}')
+        print(f'* Top answers for test query:\n\n{df_ans.head()}\n')
     
-#     return df_ans, eval.compute_performance()
-
-
-# def corpus_eval_bm25(test_data:pd.DataFrame, 
-#                     enc:SentEncode, 
-#                     merged_data:pd.DataFrame,
-#                     k:int)->pd.DataFrame:
-#     '''
-#     Run all queries on idex and measure:
-
-#         micro-averaged p@i, r@i, f1@i, for 1 =< i =< k
-    
-#     '''
-#     print('\n==> Evaluation across test set (BM25)...\n')
-    
-#     df_q = test_data[['query', 'query_id', 'query_docs']].drop_duplicates(keep='first')
-    
-#     print(f'* Shape of test set (queries):\t{df_q.shape}')
-#     print(f'* Test set snapshot:\n{df_q.sort_values(by="query_docs").head(20)}\n')
-    
-#     results = []
-#     for _, row in df_q.iterrows():
-#         _, eval_result = query_eval(row['query'], enc, merged_data, k)
-#         results.append(eval_result)
-#     df_c = pd.concat(results)
-#     df_res = df_c.groupby(level=0).mean(numeric_only=True)
-#     return df_res
+    return df_ans, eval.compute_performance()
 
 
-def query_eval(in_query:str, 
+def corpus_eval_bm25(test_data:pd.DataFrame, 
+                     merged_data:pd.DataFrame,
+                     k:int,
+                     ind_map:dict,
+                     ddb:BM25Index)->pd.DataFrame:
+    '''
+    Run all queries on idex and measure:
+
+        micro-averaged p@i, r@i, f1@i, for 1 =< i =< k
+    
+    '''
+    print('\n==> Evaluation across test set (BM25)...\n')
+    
+    begin = time.time()
+    df_q = test_data[['query', 'query_id', 'query_docs']].drop_duplicates(keep='first')
+    
+    print(f'* Shape of test set (queries):\t{df_q.shape}')
+    print(f'* Test set snapshot:\n{df_q.sort_values(by="query_docs").head(20)}\n')
+    
+    results = []
+    for _, row in df_q.iterrows():
+        _, eval_result = query_eval_bm25(row['query'], 
+                                    merged_data, 
+                                    k, 
+                                    ind_map, 
+                                    ddb)
+        results.append(eval_result)
+    df_c = pd.concat(results)
+    df_res = df_c.groupby(level=0).mean(numeric_only=True)
+    end = time.time()
+    
+    print(f'* Time taken: {end-begin:.2f}s')
+    return df_res
+
+
+def query_eval_faiss(in_query:str, 
                enc:SentEncode, 
                merged_data:pd.DataFrame,
                k:int,
@@ -207,7 +225,7 @@ def query_eval(in_query:str,
     return df_ans, eval.compute_performance()
 
 
-def corpus_eval(test_data:pd.DataFrame,
+def corpus_eval_faiss(test_data:pd.DataFrame,
                 merged_data:pd.DataFrame,
                 enc:SentEncode, 
                 k:int,
@@ -221,14 +239,15 @@ def corpus_eval(test_data:pd.DataFrame,
     '''
     print('\n==> Evaluation across test set (FAISS)...\n')
     
+    begin = time.time()
     df_q = test_data[['query', 'query_id', 'query_docs']].drop_duplicates(keep='first')
     
     print(f'* Shape of test set (queries):\t{df_q.shape}')
-    print(f'* Test set snapshot:\n{df_q.sort_values(by="query_docs").head(20)}')
+    print(f'* Test set snapshot:\n{df_q.sort_values(by="query_docs").head(20)}\n')
     
     results = []
     for _, row in df_q.iterrows():
-        _, eval_result = query_eval(row['query'], 
+        _, eval_result = query_eval_faiss(row['query'], 
                                     enc, 
                                     merged_data, 
                                     k, 
@@ -237,6 +256,9 @@ def corpus_eval(test_data:pd.DataFrame,
         results.append(eval_result)
     df_c = pd.concat(results)
     df_res = df_c.groupby(level=0).mean(numeric_only=True)
+    end = time.time()
+
+    print(f'* Time taken: {end-begin:.2f}s')
     return df_res
 
 
@@ -264,7 +286,7 @@ def query_rerank(in_query:str,
     return df_ans, eval.compute_performance()
 
 
-def corpus_rerank_v(test_data:pd.DataFrame, 
+def corpus_rerank_faiss(test_data:pd.DataFrame, 
                     rank:ReRanker,
                     enc:SentEncode, 
                     k:int,
@@ -280,14 +302,15 @@ def corpus_rerank_v(test_data:pd.DataFrame,
     '''
     print('\n==> Evaluation across test set (rerank)...\n')
     
+    begin = time.time()
     df_q = test_data[['query', 'query_id', 'query_docs']].drop_duplicates(keep='first')
     
     print(f'* Shape of test set (queries):\t{df_q.shape}')
-    print(f'* Test set snapshot:\n{df_q.sort_values(by="query_docs").head(20)}')
+    print(f'* Test set snapshot:\n{df_q.sort_values(by="query_docs").head(20)}\n')
     
     results = []
     for _, row in df_q.iterrows():
-        df_ans, _ = query_eval(row['query'], 
+        df_ans, _ = query_eval_faiss(row['query'], 
                                     enc, 
                                     merged_data, 
                                     k, 
@@ -298,6 +321,9 @@ def corpus_rerank_v(test_data:pd.DataFrame,
         results.append(eval_result)
     df_c = pd.concat(results)
     df_res = df_c.groupby(level=0).mean(numeric_only=True)
+    end = time.time()
+
+    print(f'* Time taken: {end-begin:.2f}s')
     return df_res
 
 
@@ -317,10 +343,10 @@ if __name__ == '__main__':
     f_ind_map = embedd_and_index_data(c_merged_data, v_db, v_enc)
 
     # Update index (BM25)
-    #ind_map_d = embedd_and_index_data(merged_data, d_db)
+    d_ind_map = bm25_index_data(c_merged_data, d_db)
 
     print()
-    print('==> Querying index...\n')
+    print('==> Querying index (sample query on: FAISS, FAISS + cross encoder, BM25)...\n')
     
     # Sample query (text)
     c_test_query = c_test_data['query'].head(20).values[10]
@@ -328,22 +354,26 @@ if __name__ == '__main__':
     # Answer set size
     k = 100 # size of answer set
 
+    # Test query evaluation
+
     # Evaluation on test query (FAISS)
-    df_ans_q, query_eval_result = query_eval(c_test_query, 
+    print('a) Sample query on FAISS\n')
+    df_ans_q, query_eval_result = query_eval_faiss(c_test_query, 
                                              v_enc, c_merged_data, k, 
                                              f_ind_map, 
                                              v_db)
     print()
     print(query_eval_result.head(k))
     query_eval_result.plot(kind='line', 
-                           xlabel='ranking', 
+                           xlabel='ranking\n' + c_test_query, 
                            ylabel='scores', 
-                           title='Base')
+                           title='Base (FAISS)')
     plt.xticks(fontsize=8)
     plt.yticks(fontsize=8)
-    plt.show()
+    plt.savefig('results/faiss_base_q.png')
 
     # Evaluation on test query (FAISS + cross encoder)
+    print('\nb) Sample query on FAISS + cross encoder\n')
     df_ans_r, query_rerank_result = query_rerank(c_test_query, 
                                                  f_rerank,
                                                  c_merged_data, 
@@ -351,39 +381,70 @@ if __name__ == '__main__':
     print()
     print(query_eval_result.head(k))
     query_rerank_result.plot(kind='line', 
-                             xlabel='ranking', 
+                             xlabel='ranking\n' + c_test_query, 
                              ylabel='scores', 
-                             title='Reranked')
+                             title='Reranked (FAISS + Cross Encoder)')
     plt.xticks(fontsize=8)
     plt.yticks(fontsize=8)
-    plt.show()
+    plt.savefig('results/faiss_cross_q.png')
+
+    # Evaluation on test query (BM25)
+    print('\nc) Sample query on BM25\n')
+    df_ans_q_bm25, query_eval_res_bm25 = query_eval_bm25(c_test_query, 
+                                                         c_merged_data, 
+                                                         k, f_ind_map, d_db)
+    print()
+    print(query_eval_res_bm25.head(k))
+    query_eval_res_bm25.plot(kind='line', 
+                             xlabel='ranking\n' + c_test_query, 
+                             ylabel='scores', 
+                             title='Base (BM25)')
+    plt.xticks(fontsize=8)
+    plt.yticks(fontsize=8)
+    plt.savefig('results/bm25_base_q.png')
+
+    # Evaluation on test set
 
     # Evaluation across test set (FAISS)
-    corpus_eval_result = corpus_eval(c_test_data,
-                                     c_merged_data, v_enc, k, 
-                                     f_ind_map, 
-                                     v_db)
+    corpus_eval_result = corpus_eval_faiss(c_test_data,
+                                           c_merged_data, v_enc, k, 
+                                           f_ind_map, 
+                                           v_db)
     print()
     print(corpus_eval_result.head(k))
     corpus_eval_result.plot(kind='line', 
                             xlabel='ranking', 
                             ylabel='scores', 
-                            title='Base search')
+                            title='Base search - test set (FAISS)')
     plt.xticks(fontsize=8)
     plt.yticks(fontsize=8)
-    plt.show()
+    plt.savefig('results/faiss_base_testset.png')
+
+    # Evaluation across test set (BM25)
+    corpus_eval_result_bm25 = corpus_eval_bm25(c_test_data, 
+                                               c_merged_data,
+                                               k, d_ind_map, d_db)
+    print()
+    print(corpus_eval_result_bm25.head(k))
+    corpus_eval_result_bm25.plot(kind='line', 
+                                xlabel='ranking', 
+                                ylabel='scores', 
+                                title='Base search - test set (BM25)')
+    plt.xticks(fontsize=8)
+    plt.yticks(fontsize=8)
+    plt.savefig('results/bm25_base_testset.png')
 
     # Evaluation across test set (FAISS + cross encoder)
-    corpus_rerank_result = corpus_rerank_v(c_test_data, 
-                                         f_rerank,
-                                         v_enc, k, f_ind_map, v_db,
-                                         c_merged_data)
+    corpus_rerank_result = corpus_rerank_faiss(c_test_data, 
+                                               f_rerank,
+                                               v_enc, k, f_ind_map, v_db,
+                                               c_merged_data)
     print()
     print(corpus_rerank_result.head(k))
     corpus_rerank_result.plot(kind='line',
                               xlabel='ranking', 
                               ylabel='scores', 
-                              title='Reranked hits')
+                              title='Reranked search - test set (FAISS + Cross Encoder)')
     plt.xticks(fontsize=8)
     plt.yticks(fontsize=8)
-    plt.show()
+    plt.savefig('results/faiss_cross_testset.png')
