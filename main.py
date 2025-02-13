@@ -329,15 +329,22 @@ def corpus_rerank_faiss(test_data:pd.DataFrame,
 
 if __name__ == '__main__':
 
-    num_test_queries = 5
+    # ************************************
+    # Load dataset and instantiate objects
+    # ************************************
     
-    c_merged_data = data_cranfield = load_cranfield()
-    c_train_data, c_test_data = split_data(data_cranfield, test_queries=num_test_queries)
+    num_test_queries = 5 # we use the 5 queries with most relevant documents for the test set
+    c_merged_data = data_cranfield = load_cranfield() # load 
+    c_train_data, c_test_data = split_data(data_cranfield, test_queries=num_test_queries) # split into training and test sets
     
     v_db  = FaissIndex(384) # FAISS index
     d_db  = BM25Index() # BM25 index
     v_enc = SentEncode() # sentence embedding
     f_rerank = ReRanker() # cross encoder (for FAISS)
+
+    # **********
+    # Index data
+    # **********
 
     # Update index (FAISS)
     f_ind_map = embedd_and_index_data(c_merged_data, v_db, v_enc)
@@ -354,7 +361,9 @@ if __name__ == '__main__':
     # Answer set size
     k = 100 # size of answer set
 
+    # *********************
     # Test query evaluation
+    # *********************
 
     # Evaluation on test query (FAISS)
     print('a) Sample query on FAISS\n')
@@ -403,7 +412,9 @@ if __name__ == '__main__':
     plt.yticks(fontsize=8)
     plt.savefig('results/bm25_base_q.png')
 
+    # **********************
     # Evaluation on test set
+    # **********************
 
     # Evaluation across test set (FAISS)
     corpus_eval_result = corpus_eval_faiss(c_test_data,
