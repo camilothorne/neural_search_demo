@@ -300,7 +300,7 @@ def corpus_rerank_faiss(test_data:pd.DataFrame,
         micro-averaged p@i, r@i, f1@i, for 1 =< i =< k
     
     '''
-    print('\n==> Evaluation across test set (rerank)...\n')
+    print('\n==> Evaluation across test set (FAISS + Cross Encoder)...\n')
     
     begin = time.time()
     df_q = test_data[['query', 'query_id', 'query_docs']].drop_duplicates(keep='first')
@@ -316,6 +316,45 @@ def corpus_rerank_faiss(test_data:pd.DataFrame,
                                     k, 
                                     ind_map, 
                                     vdb, 
+                                    print_res=False)
+        _, eval_result = query_rerank(row['query'], rank, merged_data, df_ans)
+        results.append(eval_result)
+    df_c = pd.concat(results)
+    df_res = df_c.groupby(level=0).mean(numeric_only=True)
+    end = time.time()
+
+    print(f'* Time taken: {end-begin:.2f}s')
+    return df_res
+
+
+def corpus_rerank_bm25(test_data:pd.DataFrame, 
+                    rank:ReRanker,
+                    k:int,
+                    ind_map:dict,
+                    ddb:BM25Index,  # index
+                    merged_data:pd.DataFrame,  # merged dataset with doc_id and text
+                   )->pd.DataFrame:
+    '''
+    Run all queries on idex and measure:
+
+        micro-averaged p@i, r@i, f1@i, for 1 =< i =< k
+    
+    '''
+    print('\n==> Evaluation across test set (BM25 + Cross Encoder)...\n')
+    
+    begin = time.time()
+    df_q = test_data[['query', 'query_id', 'query_docs']].drop_duplicates(keep='first')
+    
+    print(f'* Shape of test set (queries):\t{df_q.shape}')
+    print(f'* Test set snapshot:\n{df_q.sort_values(by="query_docs").head(20)}\n')
+    
+    results = []
+    for _, row in df_q.iterrows():
+        df_ans, _ = query_eval_bm25(row['query'], 
+                                    merged_data, 
+                                    k, 
+                                    ind_map, 
+                                    ddb, 
                                     print_res=False)
         _, eval_result = query_rerank(row['query'], rank, merged_data, df_ans)
         results.append(eval_result)
@@ -383,12 +422,12 @@ if __name__ == '__main__':
 
     # Evaluation on test query (FAISS + cross encoder)
     print('\nb) Sample query on FAISS + cross encoder\n')
-    df_ans_r, query_rerank_result = query_rerank(c_test_query, 
+    _, query_rerank_result = query_rerank(c_test_query, 
                                                  f_rerank,
                                                  c_merged_data, 
                                                  df_ans_q)
     print()
-    print(query_eval_result.head(k))
+    print(query_rerank_result.head(k))
     query_rerank_result.plot(kind='line', 
                              xlabel='ranking\n' + c_test_query, 
                              ylabel='scores', 
@@ -411,6 +450,22 @@ if __name__ == '__main__':
     plt.xticks(fontsize=8)
     plt.yticks(fontsize=8)
     plt.savefig('results/bm25_base_q.png')
+
+    # Evaluation on test query (BM25 + cross encoder)
+    print('\nd) Sample query on BM25 + cross encoder\n')
+    _, query_rerank_result_bm25 = query_rerank(c_test_query, 
+                                                 f_rerank,
+                                                 c_merged_data, 
+                                                 df_ans_q_bm25)
+    print()
+    print(query_rerank_result_bm25.head(k))
+    query_rerank_result_bm25.plot(kind='line', 
+                             xlabel='ranking\n' + c_test_query, 
+                             ylabel='scores', 
+                             title='Reranked (FAISS + Cross Encoder)')
+    plt.xticks(fontsize=8)
+    plt.yticks(fontsize=8)
+    plt.savefig('results/bm25_cross_q.png')
 
     # **********************
     # Evaluation on test set
@@ -459,3 +514,19 @@ if __name__ == '__main__':
     plt.xticks(fontsize=8)
     plt.yticks(fontsize=8)
     plt.savefig('results/faiss_cross_testset.png')
+
+
+    # Evaluation across test set (BM25 + cross encoder)
+    corpus_rerank_res_bm25 = corpus_rerank_bm25(c_test_data, 
+                                                f_rerank,
+                                                k, d_ind_map, d_db,
+                                                c_merged_data)
+    print()
+    print(corpus_rerank_res_bm25.head(k))
+    corpus_rerank_res_bm25.plot(kind='line',
+                              xlabel='ranking', 
+                              ylabel='scores', 
+                              title='Reranked search - test set (BM25 + Cross Encoder)')
+    plt.xticks(fontsize=8)
+    plt.yticks(fontsize=8)
+    plt.savefig('results/bm25_cross_testset.png')
