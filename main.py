@@ -12,6 +12,7 @@ from neural_search.faiss_vdb import FaissIndex
 from neural_search.evaluation import EvaluateResults
 from neural_search.cross_encoder import ReRanker
 from neural_search.bm25_vdb import BM25Index
+from neural_search.rrf import RRF
 
 
 def load_cranfield()->pd.DataFrame:
@@ -28,7 +29,7 @@ def load_cranfield()->pd.DataFrame:
         'query_id']].groupby('query_id')['doc_id'].transform('count')
     
     print('\n==> Loading dataset...\n')
-    print(list(merged_data.columns))  # Check the merged columns name
+    print(list(merged_data.columns))  # check the merged columns name
     print(merged_data.head())
     print()
     print(merged_data.query_id.value_counts())
@@ -121,7 +122,7 @@ def query_eval_bm25(in_query:str,
         p@j, r@j, f1@j, for 1 =< j =< k 
     
     '''
-    D, I = ddb.search_index(in_query, k) # Query index
+    D, I = ddb.search_index(in_query, k) # query index
     df_ans = pd.DataFrame()
     df_ans['bm25'] = D[0]
     df_ans['doc_id'] = I[0]
@@ -198,7 +199,7 @@ def query_eval_faiss(in_query:str,
     '''
     vec_query = np.zeros((1,384))
     vec_query[0,:] = enc.embedd_text(in_query)
-    D, I = vdb.search(vec_query, k) # Query index
+    D, I = vdb.search(vec_query, k) # query index
     df_ans = pd.DataFrame()
     df_ans['scores'] = D[0]
     df_ans['doc_id'] = I[0]
@@ -232,7 +233,7 @@ def corpus_eval_faiss(test_data:pd.DataFrame,
                 ind_map:dict,
                 vdb:FaissIndex)->pd.DataFrame:
     '''
-    Run all queries on idex and measure:
+    Run all queries on index and measure:
 
         micro-averaged p@i, r@i, f1@i, for 1 =< i =< k
     
@@ -265,15 +266,17 @@ def corpus_eval_faiss(test_data:pd.DataFrame,
 def query_rerank(in_query:str, 
                  rank:ReRanker,
                  merged_data:pd.DataFrame,
-                 df_ans:pd.DataFrame)->tuple[pd.DataFrame, pd.DataFrame]:
+                 df_ans:pd.DataFrame,
+                 rrf:bool=False)->tuple[pd.DataFrame, pd.DataFrame]:
     '''
     Run query on index and measure:
 
         p@j, r@j, f1@j, for 1 =< j =< k 
     
     '''
-
-    df_ans['rerank'] = df_ans.text.apply(lambda x: rank.score_pair(in_query, x))
+    if rrf==False:
+        # RRF will generate this score
+        df_ans['rerank'] = df_ans.text.apply(lambda x: rank.score_pair(in_query, x))
     ans_docs = list(df_ans['doc_id'].values)
     rel_docs = list(merged_data[
         merged_data['query']==in_query]['doc_id'].values)
@@ -282,6 +285,9 @@ def query_rerank(in_query:str,
         lambda x: 'yes' if x in rel_docs else 'no')
     df_ans = df_ans.merge(merged_data[
         ['text', 'doc_id']], on='doc_id', how='inner').drop_duplicates(keep='first')
+    # The 'rerank' option will sort by score in descending order 
+    # (from highest to lowest) as scores are now either RRF or
+    # similarity scores 
     eval = EvaluateResults(df_ans, len(miss_docs), rank='rerank')
     return df_ans, eval.compute_performance()
 
@@ -322,7 +328,6 @@ def corpus_rerank_faiss(test_data:pd.DataFrame,
     df_c = pd.concat(results)
     df_res = df_c.groupby(level=0).mean(numeric_only=True)
     end = time.time()
-
     print(f'* Time taken: {end-begin:.2f}s')
     return df_res
 
@@ -357,6 +362,57 @@ def corpus_rerank_bm25(test_data:pd.DataFrame,
                                     ddb, 
                                     print_res=False)
         _, eval_result = query_rerank(row['query'], rank, merged_data, df_ans)
+        results.append(eval_result)
+    df_c = pd.concat(results)
+    df_res = df_c.groupby(level=0).mean(numeric_only=True)
+    end = time.time()
+
+    print(f'* Time taken: {end-begin:.2f}s')
+    return df_res
+
+
+def corpus_rerank_rrf(test_data:pd.DataFrame, 
+                    rank:ReRanker,
+                    k:int,
+                    enc:SentEncode,
+                    dind_map:dict,
+                    vind_map:dict,
+                    ddb:BM25Index,  # index1
+                    vdb:FaissIndex, # index2
+                    merged_data:pd.DataFrame,  # merged dataset with doc_id and text
+                   )->pd.DataFrame:
+    '''
+    Run all queries on idex and measure:
+
+        micro-averaged p@i, r@i, f1@i, for 1 =< i =< k
+    
+    '''
+    print('\n==> Evaluation across test set (BM25 + FAISS + RRF)...\n')
+    
+    begin = time.time()
+    df_q = test_data[['query', 'query_id', 'query_docs']].drop_duplicates(keep='first')
+    
+    print(f'* Shape of test set (queries):\t{df_q.shape}')
+    print(f'* Test set snapshot:\n{df_q.sort_values(by="query_docs").head(20)}\n')
+    
+    results = []
+    for _, row in df_q.iterrows():
+        df_ans1, _ = query_eval_bm25(row['query'], 
+                                    merged_data, 
+                                    k, 
+                                    dind_map, 
+                                    ddb, 
+                                    print_res=False)
+        df_ans2, _ = query_eval_faiss(row['query'], 
+                                    enc, 
+                                    merged_data, 
+                                    k, 
+                                    vind_map, 
+                                    vdb, 
+                                    print_res=False)
+        rrf = RRF(df_ans1, df_ans2)
+        df_ans = rrf.get_rrf()
+        _, eval_result = query_rerank(row['query'], rank, merged_data, df_ans, rrf=True)
         results.append(eval_result)
     df_c = pd.concat(results)
     df_res = df_c.groupby(level=0).mean(numeric_only=True)
@@ -530,3 +586,24 @@ if __name__ == '__main__':
     plt.xticks(fontsize=8)
     plt.yticks(fontsize=8)
     plt.savefig('results/bm25_cross_testset.png')
+
+
+    # Evaluation across test set (BM25 + FAISS + RRF)
+    corpus_rerank_res_rrf = corpus_rerank_rrf(c_test_data, 
+                                              f_rerank,
+                                              k,
+                                              v_enc,
+                                              d_ind_map,
+                                              f_ind_map,
+                                              d_db,  # index1
+                                              v_db, # index2
+                                              c_merged_data)
+    print()
+    print(corpus_rerank_res_rrf.head(k))
+    corpus_rerank_res_rrf.plot(kind='line',
+                              xlabel='ranking', 
+                              ylabel='scores', 
+                              title='Reranked search - test set (BM25 + FAISS + RRF)')
+    plt.xticks(fontsize=8)
+    plt.yticks(fontsize=8)
+    plt.savefig('results/bm25_faiss_rrf_testset.png')
