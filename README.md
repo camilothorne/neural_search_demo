@@ -26,7 +26,7 @@ $$
 where $\text{tf}(q_{i},v)$ is the number of times that the keyword $t_i$ occurs in $v$, and $avdgl$ is the average document length of a document in the document collection $D$ indexed. $k_1$ and $b$ are hyper-parameters, set by default to $k_1 \in [1.2, 2.0]$ and $b=0.75$. The inverse document frequency of $t_i$ is defined as follows:
 
 $$
-  \text{idf}(t_i) = \ln \left(\frac{ |D| - n(t_i) + 0.5 } { n(t_i) + 0.5} + 1\right)
+\text{idf}(t_i) = \ln \left(\frac{ |D| - n(t_i) + 0.5 } { n(t_i) + 0.5} + 1\right)
 $$
 
 with $n(t_i)$ the number of documents in $D$ where $t_i$ appears.
@@ -38,7 +38,7 @@ a $k$-dimensional embedding $\vec{q}$ of document $d$.
 Then the [L2-norm]() is defined as the Euclidian distance between $\vec{q}$ and $\vec{d}$, namely:
 
 $$
-\text{l2}(q,d) = ||\vec{q} - \vec{d}||_2 = \sqrt{\sum_{i=1}^k (\vec{q}_i - \vec{d_i})^2}
+\text{l2}(q,d) = \sqrt{ \sum_{i=1}^k (\vec{q}_i - \vec{d_i})^2 }
 $$
 
 ### Reranking with a cross-encoder
@@ -46,10 +46,12 @@ $$
 ###  Reranking with reciprocal rank fusion
 
 $$
-  \text{rrf}(d) = \sum_{r \in R} \frac{1}{k + r(d)}
+  \text{rrf}(d) = \sum_{r \in R} \left( \frac{1}{k + r(d)} \right)
 $$
 
 ### Evaluation
+
+**Methods**
 
 To compare methods, we rely on IR evaluation metrics, **precision, recall and F1-score at ranking level $k$**. 
 What this means is that we:
@@ -62,6 +64,9 @@ $$
     F1{@}k = \frac{2 \cdot P{@}k \cdot R{@}k}{P{@}k + R{@}k}   
 $$
 
+**Results**
+
+<div align="center">
 
 Method                  | P@5      | R@5      | F1@5 
 -------                 |------    |------    |------
@@ -70,6 +75,8 @@ FAISS                   | 0.32     | 0.06     | 0.10
 FAISS + cross-encoder   | 0.16     | 0.03     | 0.05
 BM25  + cross-encoder   | 0.20     | 0.03     | 0.06
 BM25  + FAISS + RRF     | 0.40     | 0.07     | 0.15
+
+</div>
 
 ## Running the experiments
 
