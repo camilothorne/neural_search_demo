@@ -301,7 +301,7 @@ def corpus_rerank_faiss(test_data:pd.DataFrame,
                     merged_data:pd.DataFrame,  # merged dataset with doc_id and text
                    )->pd.DataFrame:
     '''
-    Run all queries on idex and measure:
+    Run all queries on index and measure:
 
         micro-averaged p@i, r@i, f1@i, for 1 =< i =< k
     
@@ -340,7 +340,7 @@ def corpus_rerank_bm25(test_data:pd.DataFrame,
                     merged_data:pd.DataFrame,  # merged dataset with doc_id and text
                    )->pd.DataFrame:
     '''
-    Run all queries on idex and measure:
+    Run all queries on index and measure:
 
         micro-averaged p@i, r@i, f1@i, for 1 =< i =< k
     
@@ -382,7 +382,7 @@ def corpus_rerank_rrf(test_data:pd.DataFrame,
                     merged_data:pd.DataFrame,  # merged dataset with doc_id and text
                    )->pd.DataFrame:
     '''
-    Run all queries on idex and measure:
+    Run all queries on index and measure:
 
         micro-averaged p@i, r@i, f1@i, for 1 =< i =< k
     
@@ -522,6 +522,26 @@ if __name__ == '__main__':
     plt.xticks(fontsize=8)
     plt.yticks(fontsize=8)
     plt.savefig('results/bm25_cross_q.png')
+
+
+    # Evaluation on test query (BM25 + FAISS + RRF)
+    print('\ne) Sample query on BM25 + FAISS + RRF\n')
+    q_rrf = RRF(df_ans_q_bm25, df_ans_q) # merge results and rerank
+    df_ans_q_rrf = q_rrf.get_rrf()
+    _, query_rerank_result_rrf = query_rerank(c_test_query, 
+                                                 f_rerank,
+                                                 c_merged_data, 
+                                                 df_ans_q_rrf,
+                                                 rrf=True)
+    print()
+    print(query_rerank_result_rrf.head(k))
+    query_rerank_result_rrf.plot(kind='line', 
+                             xlabel='ranking\n' + c_test_query, 
+                             ylabel='scores', 
+                             title='Reranked (FAISS + BM25 + RRF)')
+    plt.xticks(fontsize=8)
+    plt.yticks(fontsize=8)
+    plt.savefig('results/bm25_faiss_rrf_q.png')
 
     # **********************
     # Evaluation on test set
