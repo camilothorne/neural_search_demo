@@ -6,16 +6,22 @@ warnings.filterwarnings("ignore")
 
 class EvaluateResults:
 
-    def __init__(self, df_res:pd.DataFrame, fps:int, rank:str='scores')->None:
+    def __init__(self, 
+                 df_res:pd.DataFrame, 
+                 fps:int, 
+                 rank:str='scores', 
+                 max_num:int=100)->None:
         '''
         Args:
-            df_res: answer set data frame
-            fps:    # of relevant documents missing from df_res 
-            rank:   ranking score column name
+            df_res:  answer set data frame
+            fps:     # of relevant documents missing from df_res 
+            rank:    ranking score column name
+            max_num: maximum number of relevant documents in answer set to consider
         '''     
         self.df_res = df_res
         self.fps = fps
         self.rank = rank
+        self.max = max_num
 
 
     def compute_correlation(self, x:str, y:str)->tuple[float, float, float]:
@@ -83,7 +89,7 @@ class EvaluateResults:
             ascending=True
         else:
             ascending=False
-        for k in range(self.df_res.shape[0]):
+        for k in range(min(self.max,self.df_res.shape[0])):
             perf.append(self.recall_precision_f1_q(
                 self.df_res[[self.rank, 
                              'relevant']].sort_values(
