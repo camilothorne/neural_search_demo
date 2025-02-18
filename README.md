@@ -22,6 +22,7 @@ This is a small corpus of 1,400 scientific abstracts and 225 questions (both wit
 
 The Cranfield corpus assigns a relevance score ranging from -1 to 3 to positive answers to a user query.
 For simplicity, we disregard such fine-grained classification, and collapse them to a single label.
+We use custom splits, described below (see `data/` for the splits).
 
 <div align="center">
 
@@ -123,7 +124,8 @@ $$
 For the full results, please check the precision, recall and F1-score plots under `results/`. Here we give
 only a high-level summary at rank $k=5$, consisting of micro-averages for the five queries chosen as test set.
 
-BM25 and FAISS give somewhat similar results, even though the FAISS method is 2x slower. On the other hand, it supports queries with OOV terms. Interestingly, reranking with a pre-trained cross encoder (which increases latency > 2x) actually degrades results. Fine-tuning the cross-encoder (marked with * below) on our Cranfield training set didn't change performance scores either. By contrast, RRF does significatly increases precision.
+BM25 and FAISS give somewhat similar results, even though the FAISS method is 2x slower. On the other hand, it supports queries with OOV terms. Interestingly, reranking with a pre-trained cross encoder (which increases latency > 2x) actually degrades results. Fine-tuning the cross-encoder (marked with * below) on our Cranfield training set
+didn't change performance scores either. By contrast, RRF does significatly increases precision.
 
 <div align="center">
 
@@ -171,3 +173,8 @@ from neural_search.cross_encoder import ReRanker
 #     out_dim=1
 default_rerank = ReRanker()
 ```
+
+The model was fine-tuned on our custom Cranfield train split, that we modified with **negative** mining, i.e.,
+by randomly sampling an number of irrelevant document equal to the number of relevant documents available
+for each of its 152 queries (i.e. irrelavant documents $d$ are documents relevant for another query $q' \neq q$).
+Thereafter, around ~10% was used for validation. Please refer to `models/` for the datasets. 
