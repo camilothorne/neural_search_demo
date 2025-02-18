@@ -1,0 +1,2075 @@
+scores	doc_id	relevant	text
+0.58300656	486	yes	"similarity laws for aerothermoelastic testing .
+  the similarity laws for aerothermoelastic testing are presented
+in the range .  these are obtained by
+making nondimensional the appropriate governing equations of
+the individual external aerodynamic flow, heat conduction to
+the interior, and stress-deflection problems which make up the
+combined aerothermoelastic problem .
+  for the general aerothermoelastic model, where the model is
+placed in a high-stagnation-temperature wind tunnel, similitude
+is shown to be very difficult to achieve for a scale ratio other
+than unity .  the primary conflict occurs between the
+free-stream mach number reynolds number aeroelastic
+parameter heat conduction parameter and
+thermal expansion parameter .
+  means of dealing with this basic conflict are presented .  these
+include (1) looking at more specialized situations, such as the
+behavior of wing structures and of thin solid plate lifting surfaces,
+and panel flutter, where the aerothermoelastic similarity
+parameters assume less restrictive forms, (2) the use of /incomplete
+aerothermoelastic/ testing in which the pressure and/or heating
+rates are estimated in advance and applied artificially to the
+model, and (3) the use of /restricted purpose/ models
+investigating separately one or another facet of the complete
+aerothermoelastic problem .
+  some numerical examples of modeling for the general
+aerothermoelastic case as well as for the specialized situations
+mentioned in (1) above are given .
+  finally, extension of the aerothermoelastic similarity laws to
+higher speeds and temperatures is discussed ."
+0.71470934	184	yes	"scale models for thermo-aeroelastic research .
+  an investigation is made of the
+parameters to be satisfied for
+thermo-aeroelastic similarity .  it is concluded
+that complete similarity obtains
+only when aircraft and model are identical
+in all respects, including size .
+  by limiting consideration to
+conduction effects, by assuming the major
+load carrying parts of the structure
+are in regions where the flow is either
+entirely laminar, or entirely turbulent,
+and by assuming a specific
+relationship between reynolds number and nusselt
+number, an approach to similarity can
+be achieved for small scale models .
+experimental and analytical work is
+required to check on the validity of these assumptions .
+  it appears that existing hot wind
+tunnels will not be completely
+adequate for thermo-aeroelastic work, and
+accordingly a possible layout for
+the type of tunnel required is described .
+automatic programmed control of
+the tunnel would appear to be necessary ."
+0.77215147	13	yes	"similarity laws for stressing heated wings .
+  it will be shown that the differential equations for a heated
+plate with large temperature gradient and for a similar plate at
+constant temperature can be made the same by a proper
+modification of the thickness and the loading for the isothermal plate .
+this fact leads to the result that the stresses in the heated plate
+can be calculated from measured strains on the unheated plate by
+a series of relations, called the /similarity laws ./  the
+application of this analog theory to solid wings under aerodynamic
+heating is discussed in detail .  the loading on the unheated analog
+wing is, however, complicated and involves the novel concept
+of feedback and /body force/ loading .  the problem of stressing
+a heated box-wing structure can be solved by the same analog
+method and is briefly discussed ."
+0.77750343	51	yes	"theory of aircraft structural models subjected to aerodynamic
+heating and external loads .
+  the problem of investigating the simultaneous effects of transient
+aerodynamic heating and external loads on aircraft structures for the
+purpose of determining the ability of the structure to withstand flight
+to supersonic speeds is studied .  by dimensional analyses it is shown
+that ..
+constructed of the same materials as the aircraft will be thermally
+similar to the aircraft with respect to
+the flow of heat through the structure
+will be similar to those of the aircraft when the structural model is
+constructed at the same temperature as the aircraft .
+external loads will be similar to those of the aircraft .
+subjected to heating and cooling that correctly simulate the aerodynamic
+heating of the aircraft, except with respect to angular velocities and
+angular accelerations, without requiring determination of the heat flux
+at each point on the surface and its variation with time .
+acting on the aerodynamically heated structural model to those acting
+on the aircraft is determined for the case of zero angular velocity and
+zero angular acceleration, so that the structural model may be subjected
+to the external loads required for simultaneous simulation of stresses
+and deformations due to external loads ."
+0.79867524	12	yes	"some structural and aerelastic considerations of high
+speed flight .
+  the dominating factors in structural design of high-speed
+aircraft are thermal and aeroelastic in origin .  the subject
+matter is concerned largely with a discussion of these factors and
+their interrelation with one another .  a summary is presented
+of some of the analytical and experimental tools available to
+aeronautical engineers to meet the demands of high-speed flight
+upon aircraft structures .  the state of the art with respect to
+heat transfer from the boundary layer into the structure, modes
+of failure under combined load as well as thermal inputs and
+acrothermoelasticity is discussed .  methods of attacking and
+alleviating structural and aeroelastic problems of high-speed
+flight are summarized .  finally, some avenues of fundamental
+research are suggested ."
+0.8659326	746	no	"aeroelastic problems in connection with high speed
+flight .
+  a review is given of developments
+in the field of aeroelasticity during the
+past ten years .  the effect of steadily increasing
+mach number has been two-fold ..  on
+the one hand the aerodynamic derivatives have
+changed, and in some cases brought new
+problems, and on the other hand the design for
+higher mach numbers has led to thinner
+aerofoils and more slender fuselages for which
+the required stiffness is more difficult to
+provide .  both these aspects are discussed,
+and various methods of attack on the
+problems are considered .  the relative merits
+of stiffness, damping and massbalance
+for the prevention of control surface flutter are
+discussed .  a brief mention is made of
+the recent problems of damage from jet efflux
+and of the possible aeroelastic effects
+of kinetic heating ."
+0.9063819	606	no	"formulae and approximations for aerodynamic heating rates in high speed
+flight .
+this note gives formulae and approximations suitable for making
+preliminary estimates of aerodynamic heating rates in high speed flight .
+the formulae are based on the /intermediate enthalpy/ approximation
+which has given good agreement with theoretical and experimental
+evidence . in the general flight case they could be used in conjunction with
+ an analogue computer or a step-by-step method of integration to
+predict the variations of heat flow and skin temperature with time .
+in the restricted case of flight at constant altitude and mach number,
+simple analytical methods and results are given which include the
+effects of radiation and can be applied to /thick/ as well as /thin/ skins
+where h is the aerodynamic heat transfer factor, and g, d and k are the
+heat capacity, thickness and thermal conductivity of the skin . if 0.1
+the skin is approximately /thin/, i.e. temperature gradients across its
+thickness may be neglected ."
+0.93221617	860	no	"test of an aerodynamically heated multi-- web wing
+structure (mw-1) in a free jet at mach number 2.
+  a multiweb wing structure, representing an airplane or missile wing,
+was tested under simulated supersonic flight conditions to determine the
+transient temperature distribution .  the aerodynamic loads played an
+important and unanticipated role, however, in that the model experienced
+a dynamic failure near the end of the test .  the test is discussed and
+the conclusion reached that the model failed as a result of the combined
+action of aerodynamic heating and loading .  the temperature data
+collected are analyzed and are shown to be in reasonable agreement with
+calculated values ."
+0.9719181	102	yes	"advantages and limitations of models .
+summary ..  the use of models for structural test investigations in the
+presence of kinetic heating effects is examined .  the principal
+features of the complex process to be
+represented are discussed under the classifications
+external air flow, internal heat transfer,
+elastic response .  of these the second is found
+to influence most model design, and an
+analysis of a typical structure is included to
+illustrate the various contributions to
+internal heat transfer ."
+0.97596925	875	yes	"models for aeroelastic investigation .
+  this addendum provides a short note on two aspects omitted from the
+original paper, viz. gravitational effects and structural damping .  a
+short list of references to earlier papers dealing with the subject is
+also added ."
+0.97613174	497	yes	"theoretical and experimental investigation of thermal
+stresses in hypersonic aircraft wing structures .
+  a simple and relatively accurate analytic approximation is
+developed to determine the temperature and thermal-stress
+distribution in aircraft wing structures .  theoretical investigations
+show that the results of the existing thermal-stress theories
+which neglect the temperature gradient through the skin
+thickness may exceed, in the range of higher biot numbers, the true
+values by more than 30 percent .
+  refined photothermoelastic experiments verify these results
+and add another significant conclusion .  they indicate that
+thermal stresses in wing structures generated by a variable
+heat-transfer coefficient coincide with the theoretical predictions
+which are based on a constant heat-transfer coefficient, as long
+as the latter represents the arithmetic average over the heating
+cycle and the variation is in the order of 10 percent .
+however, even much greater variations in the order of 100 percent
+produce only relatively small differences ."
+1.0046315	395	no	"new methods in heat flow analysis with application
+to flight structures .
+  new methods are presented for the analysis of transient heat
+flow in complex structures, leading to drastic simplifications in
+the calculation and the possibility of including nonlinear and
+surface effects .  these methods are in part a direct application of
+some general variational principles developed earlier for linear
+thermodynamics .  they are further developed in the
+particular case of purely thermal problems to include surface and
+boundary-layer heat transfer, nonlinear systems with
+temperature-dependent parameters, and radiation .  the concepts of
+thermal potential, dissipation function, and generalized thermal
+force are introduced, leading to ordinary differential equations
+of the lagrangian type for the thermal flow field .  because of the
+particular nature of heat flow phenomena, compared with
+dynamics, suitable procedures must be developed in order to formulate
+each problem in the simplest way .  this is done by treating a
+number of examples .  the concepts of penetration depth and
+transit time are introduced and discussed in connection with
+one-dimensional flow .  application of the general method to the
+heating of a slab, with temperature-dependent heat capacity,
+shows a substantial difference between the heating and cooling
+processes .  an example of heat flow analysis of a supersonic wing
+structure by the present method is also given and requires only
+extremely simple calculations .  the results are found to be in
+good agreement with those obtained by the classical and much
+more elaborate procedures ."
+1.0227115	29	yes	"a simple model study of transient temperature and thermal
+stress distribution due to aerodynamic heating .
+  the present work is concerned with the determination of
+transient temperatures and thermal stresses in simple models intended
+to simulate parts or the whole of an aircraft structure of the built-
+up variety subjected to aerodynamic heating .
+  the first case considered is that of convective heat transfer
+into one side of a flat plate, representing a thick skin, and the
+effect of the resulting temperature distribution in inducing
+thermal stresses associated with bending restraint at the plate edges .
+numerical results are presented for the transient temperature
+differentials in the plate when the environment temperature first
+increases linearly with time and then remains constant, the
+period of linear increase representing the time of acceleration of
+the aircraft .  corresponding thermal stress information is
+presented .
+  the second case is that of the wide-flanged i-beam with
+convective heat transfer into the outer faces of the flanges .  numerical
+results are presented for transient temperature differentials for a
+wide range of values of the applicable parameters and for an
+environment temperature variation as described above .
+corresponding thermal stresses in a beam of infinite length are
+determined .  a theoretical analysis of the stress distribution in a beam
+of finite length is carried out and numerical results obtained for
+one case .  an experimental investigation of temperatures and
+stresses in such a beam is described, and results are presented
+which indicate good agreement with corresponding theoretical
+results ."
+1.0256772	378	yes	"engineering relations for friction and heat transfer to surfaces in high
+ velocity flow .
+in calculations of thermodynamic heating for high speed missiles
+parameters have been used based on relationships which hold for
+constant-property fluids . the validity of this procedure has been verified
+recently in a survey of heat transfer in which a relationship for the
+reference temperature was developed . a calculation procedure for
+laminar and turbulent boundary layers, based on this relationship, is
+given ."
+1.0266706	195	yes	"correlation of theoretical and photo-thermoelastic
+results on thermal stresses in idealized wing structure .
+after a rather complete exploratory program
+described in previous papers, the
+photo-thermoelastic method was applied to the
+experimental evaluation of the thermal-stress
+theories .  the new technique was correlated
+with several theories which analyzed the
+transient thermal stresses in idealized wing
+structures of high-speed aircraft .  various
+theories were investigated which represented
+the same idealized wing models and
+differed from each other only in the simplifying
+assumptions regarding the temperature
+distributions in skin and webs .  the theories
+were evaluated by duplicating the boundary
+and initial conditions on plastic models and
+then by correlating the theories with the
+observed fringe orders in nondimensional form .
+a significant general conclusion was
+reached after correlating the available theories
+and experimental results .  owing to
+simplifying assumptions concerning the thermal
+behavior in the flanges, thermal
+stresses predicted by the available theories are all
+higher than the experimental
+observation .  in some cases the discrepancy is as great as 30 per cent ."
+1.0464978	1361	no	"large deflections of structures subjected to heating
+and external loads .
+  the method of direct formulation of the stiffness matrix is
+extended to include the effects of nonuniform heating and large
+deflections .  the purpose is to develop an analytical tool for the
+treatment of actual structures .
+  in the solution of aeroelastic problems the relations between
+forces and deflections must be determined .  the usual stiffness
+matrix formulation of this relationship is limited to small
+temperature changes and small deflections .  for large temperature
+changes additional terms are required .  also the problem
+becomes geometrically nonlinear when large deflections are
+involved .  to overcome the inherent difficulties of the nonlinear
+problem for practical structures either an iterative or a step-
+by-step procedure must be used .  the force-deformation relations
+necessary for this step-by-step or iterative approach are derived
+for an axially loaded member and for a plate element including
+the effects of thermal strains ."
+1.0499271	1305	no	"a proposed programme of wind tunnel tests at hypersonic
+speeds to investigate the lifting properties of geometrically
+slender shapes .
+  a programme of tests at hypersonic
+speeds on slender bodies is
+described, which has the aim of
+investigating how lift is generated, and
+the compromises that may be enforced
+by aerodynamic heating .  the programme
+is based on models of simple geometric
+shape, from which lifting
+configurations will later be built up ."
+1.0507625	1104	no	"aerodynamic heating of blunt nose shapes at mach numbers up to 14 .
+results are presented from recent investigations of the aerodynamic
+heating rates of blunt nose shapes at mach numbers up to 14 . data
+obtained in flight and wind-tunnel tests have shown that the flat-faced
+cylinder has about 50 percent the stagnation-point heating rates of the
+hemisphere over nearly the entire mach number range . tests made at a
+mach number of 2 on a series of bodies made up of hemispherical segments
+ of varying radius of curvature showed that slight amounts of curvature
+can decrease the local rates at the edge of the flat-faced cylinders
+with only a slight increase in the stagnation rate . the total heat
+transfer to such slightly curved bodies is also somewhat smaller than
+the total heat transfer to flat-faced cylinders .
+comparison of several tests with theoretical heating-rate distributions
+showed that both laminar and turbulent local rates can be predicted by
+available theories /given the pressure distribution about the body/
+reasonably well, although the scatter of the available data still leaves
+ open the choice between the theories at the edge of the bodies, where
+they usually differ .
+tests on a flat-faced cylinder at a mach number of 2.49 and at angles
+of attack up to 15degree showed the movement of the apparent stagnation
+point from the center of the body to the 50 percent windward station at
+creased about 30 percent while that near the leeward edge decreased
+about 20 percent at 15degree angle of attack .
+preliminary results on a concave nose have indicated the possibility
+that this type of design may be developed to give heating rates
+significantly lower than even the flat-faced cylinder rates . the test results
+ have also shown, however, the existence of an unsteady flow phenomenon
+which can increase the heating rates to extremely high values ."
+1.0559542	283	no	"laminar heat transfer around blunt bodies in dissociated
+air .
+  a method of predicting laminar heat-transfer rates to blunt,
+highly cooled bodies with constant wall temperature in dissociated
+air flow is developed .  attention is restricted to the case of
+axisymmetric bodies at zero incidence, although two-dimensional
+bodies could be treated the same way .  the method is based on
+the use of the /local similarity/ concept and an extension of the
+ideas used by fay and riddell .  a simple formula is given for
+predicting the ratio of local heat-transfer rate to stagnation-point
+rate .  it depends on wall conditions and pressure distribution,
+but not on the thermodynamic or transport properties of the hot
+external flow, except at the stagnation point .
+  experimental heat-transfer rates obtained with correct
+stagnation-point simulation and high wall cooling in shock tubes are
+also presented and compared with the theoretical predictions .
+on the whole, the agreement is good, although in regions of
+rapidly varying pressure there is evidence that the local similarity
+assumption breaks down, and the theory underestimates the
+actual heat-transfer rate by up to 25 per cent ."
+1.0566474	14	yes	"piston theory - a new aerodynamic tool for the
+aeroelastician .
+  representative applications are described which illustrate the
+extent to which simplifications in the solutions of high-speed
+unsteady aeroelastic problems can be achieved through the use of
+certain aerodynamic techniques known collectively as /piston
+theory ./  based on a physical model originally proposed by
+hayes and lighthill, piston theory for airfoils and finite wings
+has been systematically developed by landahl, utilizing
+expansions in powers of the thickness ratio and the inverse of the
+flight mach number m .  when contributions of orders and
+are negligible, the theory predicts a point-function
+relationship between the local pressure on the surface of a wing and the
+normal component of fluid velocity produced by the wing's
+motion .  the computation of generalized forces in aeroelastic
+equations, such as the flutter determinant, is then always
+reduced to elementary integrations of the assumed modes of motion .
+  essentially closed-form solutions are given for the bending-
+torsion and control-surface flutter properties of typical section
+airfoils at high mach numbers .  these agree well with results of
+more exact theories wherever comparisons can be fairly made .
+moreover, they demonstrate the increasingly important influence
+of thickness and profile shape as m grows larger, a discovery that
+would be almost impossible using other available aerodynamic
+tools .  the complexity of more practical flutter analyses-e.g., on
+three-dimensional wings and panels-is shown to be substantially
+reduced by piston theory .  an iterative procedure is outlined, by
+which improved flutter eigenvalues can be found through the
+successive introduction of higher-order terms in and  .
+  other applications to unsteady supersonic problems are
+reviewed, including gust response and rapid maneuvers of elastic
+aircraft .  steady-state aeroelastic calculations are also discussed,
+but for them piston theory amounts only to a slight modification
+of ackeret's formulas .
+  suggestions are made regarding future research based on the
+new aerodynamic method, with particular emphasis on areas where
+computational labor can be reduced with a minimum loss of
+precision .  it is pointed out that a mach number zone exists where
+thermal effects are appreciable but nonlinear viscous interactions
+may be neglected, and that in this zone piston theory is the logical
+way of estimating air loads when analyzing aerodynamic-
+thermoelastic interaction problems ."
+1.0583538	1362	no	"non-linear analysis of heated, cambered wings by the matrix force
+method .
+various extensions of the matrix force method for complex structure
+analysis are presented and illustrated with the objective of expanding
+its range to handle the problems likely to be encountered in advanced
+vehicle wing design .  methods are covered in detail for (1) determining
+the change in flexibility that occurs when thermal stresses are present,
+and also how large these stresses must be to cause buckling, (2)
+including the non-linear effect of large deflections by an iterative
+procedure, and (3) analyzing a wing that is initially slightly cambered
+and warped with either or both of the aforementioned effects present .
+formulas are given for calculating the input matrix terms as are the
+matrix equations and supporting theoretical discussion .  an example
+illustrates the nature and magnitude of the effects being examined ."
+1.0600153	635	no	"heat transfer and pressure distributions on a hemisphere-cylinder and a
+bluff-afterbody model
+in methane-air combustion products and in air .
+an experimental investigation has been made to indicate the validity of
+using methane-air combustion products as the test medium for aerodynamic
+heating and loading tests .  tests were conducted on a
+hemisphere-cylinder and on a bluff-afterbody model, both in methane-air combustion
+products and in air alone, and covered a range of mach numbers from 6 to
+the data showed that the nondimensional heating-rate distribution
+along a hemisphere-cylinder as obtained in combustion products was in
+good agreement with that obtained in air, and the results were in
+reasonable agreement with theory .  the stagnation-point heating rates
+in air and in combustion products over the hemisphere-cylinder agreed
+within 10 percent of the theoretical values .  the pressure
+distributions around a hemisphere-cylinder obtained from tests in combution
+products were in good agreement with those obtained in air and could
+be predicted by newtonian flow theory .  the tests in combustion
+products of a bluff-afterbody model produced nondimensional
+heat-transfer coefficients which were in fair agreement with results
+obtained in air ."
+1.0678195	876	yes	"on flutter testing in high speed wind tunnels .
+  the requirements for simulating in a wind tunnel flutter conditions
+appropriate to high-speed flight are discussed, and an assessment is
+made of the desirable features of a wind tunnel suitable for flutter
+testing at transonic and supersonic speeds .
+  it is concluded that such a tunnel should have either the mach number
+or the stagnation pressure variable during the tunnel run, and that it
+is of considerable advantage, and for some purposes essential, for high
+stagnation pressures to be available .  the stagnation pressure required
+to allow flight conditions to be simulated with a flutter model is
+considered to range from at least 2 atmospheres for transonic speeds to
+about 15 atmospheres for m = 4 .  no attempt to simulate kinetic heating
+is envisaged, although its effect on stiffness should be allowed for in
+the design of the model .  to minimise uncertainties due to the
+variation of the model stiffness with temperature it is desirable that
+means for controlling the stagnation temperature should be incorporated
+in the tunnel ."
+1.0692543	36	no	"supersonic flow around blunt bodies .
+the newtonian theory of impact has been shown to be
+useful for pressure calculations on the forward facing part
+of bodies moving at high speed .  it is now a familiar practice
+to use this information to calculate nonviscous velocities at the
+wall and then to estimate rates of heat transfer .  this
+procedure is perhaps open to question,. heat-transfer rates depend
+on velocity gradients which are not given by the newtonian
+analysis .  nor can one obtain information on boundary-layer
+stability or all the body stability derivatives .  it seems,
+therefore, inevitable that, as design proceeds with these hypersonic
+missiles, there will be a greater need for more accurate
+aerodynamic theories either to predict what will happen in unfamiliar
+flight conditions or to effect an extrapolation from a known test
+result to the design condition ."
+1.0860994	142	yes	"the problem of aerodynamic heating .
+  paper is a good review of knowledge to date on convective heat
+transfer to objects moving through air at low and high speeds .
+theoretical and experimental information is given on recovery
+factors and heat-transfer coefficients for isothermal surfaces of
+unswept flat plates, wedges and cones with attached shock waves,
+and stagnation points of blunt bodies of revolution, for both
+laminar and turbulent boundary layers .  a convenient nomograph for
+calculating flat plate turbulent boundary-layer heat-transfer
+coefficients is given .  effects of surface cooling, surface roughness,
+and supply stream turbulence on transition are discussed and
+shown graphically ."
+1.0939949	686	no	"flutter tests of some simple models at a mach number
+of 7. 2 in helium flow .
+  results of hypersonic flutter
+tests on some simple models are
+presented .  the models had rectangular
+plan forms of panel aspect ratio 1.0,
+no sweepback, and bending-to-torsion
+frequency ratios of about .  two
+airfoil sections were included in the
+tests ,. double wedges of 5-, 10-,
+and 15-percent thickness and flat plates
+with straight, parallel sides
+and beveled leading and trailing edges .
+the models were supported by a
+cantilevered shaft .
+  the double-wedge wings were tested
+in helium at a mach number of 7.2 .
+an effect of airfoil thickness on flutter
+speed was found, thicker wings
+requiring more stiffness to avoid flutter .
+a few tests in air at a mach
+number of 6.9 showed the same thickness
+effect and also indicated that
+tests in helium would predict conservative
+flutter boundaries in air .
+the data in air and helium seemed to be
+correlated by piston-theory
+calculations .  piston-theory calculations
+agreed well with experiment for
+the thinner models but began to deviate
+as the thickness parameter
+approached and exceeded 1.0 .
+  a few tests on flat-plate models
+with various elastic-axis locations
+were made .  piston-theory calculations
+would not satisfactorily predict
+the flutter of these models, probably
+because of their blunt leading
+edges ."
+1.1023654	1213	no	"heat transfer to slender cones in hypersonic flow,
+including effects of yaw and nose bluntness .
+  as part of a general study of the aerothermodynamic
+characteristics of flight of hypersonic vehicles, an investigation of
+laminar heat transfer to slender yawed cones has been conducted .
+experiments have been made in the cal 11- by 15-in. shock
+tunnel at mach numbers from 11 to 13 and at yaw angles up to
+were tested .
+  the heat-transfer rates are compared with theoretical
+predictions .  the effects on the local heat-transfer rates of the
+boundary-layer displacement thickness, transverse curvature, yaw,
+nose bluntness, and the entropy sublayer are discussed .  it is
+shown that, at zero yaw, the experimental data for the sharp
+cone are in good agreement with theory when boundary-layer
+displacement and transverse-curvature effects are included .
+for the yawed sharp cone, the heat-transfer rates along the
+most windward streamline are in good agreement with reshotko's
+theory for yaw angles up to 3 .  at larger yaw angles, the
+experimental heat transfer was found to be greater than that
+predicted theoretically .  however, at these yaw angles the
+heat-transfer distribution on the windward side was in good
+agreement with laminar-boundary-layer calculations based on an
+assumption of local similarity .  the zero-yaw tests of the blunted
+cones showed qualitative agreement with cheng's shock-layer
+theory for slender blunt-nose bodies ."
+1.1102747	95	yes	"temperature distribution and thermal stresses in a
+model of a supersonic wing .
+  the transient temperature distribution and the thermal
+stresses in an idealized wing structure considered by hoff and
+torda in reference 1 are determined .  only the effects of
+aerodynamic heating and of heat conduction are included,. radiation
+and convection effects are neglected .  the present work differs
+from that of reference 1 in that the conduction from the cap to
+the web is considered when the temperature of the cap is
+calculated, and the spar cap temperature is assumed to be a function
+of both space and time .  graphs of temperature and thermal
+stress distributions are presented, and the results are compared
+with those of reference 1 ."
+1.1111188	593	no	"theoretical considerations of flutter at high mach
+number .
+  some of the theories for two-dimensional oscillatory air forces
+which may be applied in flutter calculations at high mach
+numbers are discussed .  these include linear theory, van dyke's
+second-order theory, piston theory, landahl's method,
+tangent-wedge and tangent-cone approximations, newtonian theory, and
+a new nonlinear-pressure method .  a comparison of the theories
+is made by showing the results of flutter calculations for mach
+numbers up to 10, and the possibility of flutter at these higher
+mach numbers is pointed out .
+  results of flutter calculations are shown to illustrate the
+various effects arising from a nonlinear thickness theory .  the
+possibility of large flutter speed thickness effects which depend on
+frequency ratio is shown .  the influence of airfoil shape is discussed
+and flutter speed trends with center of gravity and elastic axis
+locations are presented .  some possible refinements of piston
+theory are discussed for use at very high mach numbers .  these
+include the use of local flow conditions and the use of newtonian
+theory over the leading edge of a blunt-nosed airfoil ."
+1.1223744	66	yes	"some effects of joint conductivity on the temperature
+and thermal stresses in aerodynamically heated skin-stiffener
+combinations .
+  temperatures and thermal stresses in typical skin-stiffener
+combinations of winglike structures subjected to aerodynamic heating have
+been obtained with the aid of an electronic differential analyzer .
+variations were made in an aerodynamic
+heat-transfer parameter, in a joint
+conductivity parameter, and in the ratio
+of skin width to skin thickness .
+the results, which are presented in nondimensional form, indicate that
+decreasing the joint conductivity parameter lowers both the interior
+and the average temperature ratios, increases the peak thermal stress
+ratios in the skin, and may considerably increase the peak stiffener
+stress ratios,. increasing the aerodynamic heat-transfer parameter
+decreases the interior and average temperature ratios, increases the
+peak skin stress ratios somewhat,
+but greatly increases the peak
+stiffener stress ratios,. and increasing the ratio of skin width to skin
+thickness produces only moderate decreases in the peak skin stress
+ratios while moderately increasing the peak stiffener stress ratios ."
+1.1233196	554	no	"generalized heat transfer formulas and graphs .
+  utilizing the research results of previously
+reported investigations of the laminar, turbulent and
+radiative heat transfer in dissociated air, some
+generalized formulas for calculating heat transfer
+are given .  graphs for determining the laminar
+heat transfer, momentum thickness reynolds
+number, and turbulent heat transfer distributions
+around an axisymmetric body are also given .
+these heat transfer correlations are valid for velocities
+between 6000 and 26,000 fps and for altitudes
+up to 250,000 ft .  this range of velocities and
+altitudes covers the important re-entry regime of
+practical re-entry trajectories having interest today .
+in the last section of this report these
+generalized results are specialized for icbm nose cone re-entry
+applications .  these formulas and graphs
+may be found useful for making rapid engineering
+estimates and preliminary design evaluations
+of the heating problems associated with re-entry
+into earth's atmosphere ."
+1.1289704	997	no	"experimental and theoretical studies of axisymmetric free jets .
+some experimental and theoretical studies have been made of axisymmetric
+ free jets exhausting from sonic and supersonic nozzles into still air
+and into supersonic streams with a view toward problems associated with
+propulsive jets and the investigation of these problems .
+for jets exhausting into still air, consideration is given to the
+effects of jet mach number, nozzle divergence angle, and jet
+static-pressure ratio upon jet structure, jet wavelength, and the shape and
+curvature of the jet boundary . studies of the effects of the ratio of
+specific heats of the jets are included as are observations pertaining
+to jet noise and jet simulation .
+for jets exhausting into supersonic streams, an attempt has been made to
+ present primarily theoretical curves of the type that may be useful in
+evaluating certain jet interference effects and in formulating
+experimental studies . the primary variables considered are jet mach number,
+free-stream mach number, jet static-pressure ratio, ratio of specific
+heats of the jet, nozzle exit angle, and boattail angle . the simulation
+ problem and the case of a hypothetical hypersonic vehicle are examined"
+1.1303717	983	no	"addendum to 'heat transfer to satellite vehicles re-entering the
+atmosphere .
+the original paper gave a correlation formula for stagnation point heat
+transfer rate to a blunt body of revolution in hypersonic flow . this
+note gives a somewhat refined version, based on further calculation and
+shock tube data . its effect on the conclusions of the original paper is
+ negligible except at surface temperature parameters of over 5000
+r-ft1/8 . in other problems, where heat transfer rate itself is
+important, it can make a significant defference ."
+1.138159	141	no	"free-flight techniques for high speed aerodynamic research .
+  the development rocket-borne and rocket-launched high-speed
+airplane model test is described .  details of airborne components,
+telemetering units, tracking, and their calibration are also discussed .
+tests on controls, drag measurements, longitudinal stability
+evaluations, lift measurements, pressure measurements, aeroelastic
+estimations, and sonic bang recordings are effected .  the reynolds numbers
+involved are much higher than are usual in the wind tunnel, and
+extensions of mach numbers are obtained beyond the tunnel limits, both free
+of the tunnel wall interference ."
+1.1403334	56	yes	"an analysis of the applicability of the hypersonic
+similarity law to the study of the flow about bodies
+of revolution at zero angle of attack .
+  the hypersonic similarity law as derived by tsien has been
+investigated by comparing the pressure distributions along bodies of
+revolution at zero angle of attack .  in making
+these comparisons, particular
+attention was given to determining the limits of mach number and fineness
+ratio for which the similarity law applies .  for the purpose of this
+investigation, pressure distributions
+determined by the method of
+characteristics for ogive cylinders for
+values of mach numbers and fineness
+ratios varying from 1.5 to 12 were compared .
+pressures on various cones
+and on cone cylinders were also compared in this study .
+  the pressure distributions presented demonstrate that the hypersonic
+similarity law is applicable over a
+wider range of values of mach numbers
+and fineness ratios than might be expected from the assumptions made in
+the derivation .  this is significant since within the range of
+applicability of the law a single pressure
+distribution exists for all similarly
+shaped bodies for which the ratio of
+free-stream mach number to fineness
+ratio is constant .  charts are presented
+for rapid determination of
+pressure distributions over ogive cylinders for any combination of mach
+number and fineness ratio within defined limits ."
+1.1414735	670	no	"on blunt-body heat transfer at hypersonic speed and low reynolds
+number .
+a discussion of differences arising between experimental and analytical
+results, in particular those due to inconsistencies introduced in the
+presentation of data and the way the comparison is made ."
+1.1461288	689	no	"investigation of the laminar aerodynamics heat transfer
+characteristics of a hemisphere cylinder in the langley
+11-inch hypersonic tunnel at a mach number of 6. 8.
+  a program to investigate the aerodynamic heat transfer of a
+nonisothermal hemisphere-cylinder has been conducted in the
+langley 11-inch hypersonic tunnel at a mach number of 6.8
+and a reynolds number from approximately 0.14x10 to
+experimental heat-transfer coefficients were slightly less over the
+whole body than those predicted by the theory of stine and
+wanlass (naca technical note 3344) for an isothermal
+surface .  for stations within 45 of the stagnation point the
+heat-transfer coefficients could be correlated by a single relation
+between local stanton number and local reynolds number .
+  pitot pressure profiles taken at a mach number of 6.8 on a
+hemisphere-cylinder have verified that the local mach number or
+velocity outside the boundary layer required in the theories may
+be computed from the surface pressures by using isentropic flow
+relations and conditions immediately behind a normal shock .
+the experimental pressure distribution at a mach number of
+velocity gradients calculated at the stagnation point by using
+the modified newtonian theory vary with mach number and
+are in good agreement with those obtained from measured
+pressures for mach numbers from 1.2 to 6.8 .
+  at the stagnation point the theory of sibulkin, in which the
+diameter and conditions behind the normal shock were used,
+was in good agreement with the experiment when the velocity
+gradient at the stagnation point appropriate to the free-stream
+mach number was used ."
+1.1481844	1344	no	"atmospheric entries with vehicle lift-drag ratio modulated
+to limit deceleration and rate of deceleration vehicles
+with maximum lift-drag ratio of 0. 5.
+  an analysis has been made of
+atmosphere entries for which the
+vehicle lift-drag ratio was modulated
+to maintain specified maximum
+decelerations and or maximum deceleration
+rates .  the part of the
+vehicle drag polar used during modulation
+was from maximum lift
+coefficient to minimum drag coefficient .  the
+entries were at parabolic velocity
+and the vehicle maximum lift-drag ratio
+was 0.5 .  two-dimensional
+trajectory calculations were made for a
+nonrotating, spherical earth with an
+exponential atmosphere .  the results
+of the analysis indicate that for a
+given initial flight-path angle,
+modulation generally resulted in a
+reduction of the maximum deceleration
+to 60 percent of the unmodulated value or
+a reduction of maximum deceleration
+rate to less than 50 percent of the
+unmodulated rate .  these results were
+equivalent, for a maximum
+deceleration of 10g, to lowering the undershoot
+boundary 24 miles with a resulting
+decrease in total convective heating to
+the stagnation point of 22 percent .
+however, the maximum convective heating
+rate was increased 18 percent,. the
+maximum radiative heating rate and total
+radiative heating were each
+increased about 10 percent ."
+1.1531357	873	no	"lagrangian thermodynamics of heat transfer in systems
+including fluid motion .
+  the lagrangian thermodynamic equations of irreversible
+processes are extended to convective heat transfer .  this
+generalization provides equations for the unified analysis of transient
+heat flow in complex systems comprising solid structures and
+moving fluids in either laminar or turbulent flow .  the concept
+of a surface-heat-transfer coefficient is eliminated from the
+formulation .  the theory is developed along two different lines .  in
+one approach a new concept referred to as the /trailing function/
+is introduced .  it represents the surface-heat-transfer properties
+and may be evaluated by quite simple but remarkably accurate
+variational procedures .  the method of /associated fields/ is also
+generalized to convective phenomena .  the second line of
+approach extends to convective heat transfer the thermodynamic
+concept of entropy production for both laminar and turbulent
+flow .  the theory amounts to an extension of the
+thermodynamics of irreversible processes to systems for which onsager's
+relations are not valid ."
+1.1539328	185	yes	"some possibilities of using gas mixtures other than in
+aerodynamic research .
+a study is made of the advantages that can be realized in
+compressible-flow research by employing a substitute heavy gas in place of air .
+most heavy gases considered in previous investigations are either toxic,
+chemically active, or (as in the case of the freons) have a ratio of
+specific heats greatly different from air .  the present report is based
+on the idea that by properly mixing a heavy monatomic gas with a
+suitable heavy polyatomic gas, it is possible to obtain a heavy gas
+mixture which has the correct ratio of specific heats and which is
+nontoxic, nonflammable, thermally stable, chemically inert, and
+comprised of commercially available components .
+calculations were made of wind-tunnel characteristics for 63 gas pairs
+comprising 21 different polyatomic gases properly mixed with each of
+three monatomic gases (argon, krypton, and xenon) .  for a given
+mach number, reynolds number, and tunnel pressure, a gas-mixture
+wind tunnel having the same specific-heat ratio as air would be
+appreciably smaller and would require much less power than a
+corresponding air wind tunnel .  analogous though different advantages
+can be realized in compressor research and in firing-range research .
+the most significant applications, perhaps, arise through selecting and
+proportioning a gas mixture so as to have at ordinary wind-tunnel
+temperatures certain dimensionless characteristics which air at
+flight temperatures possesses but which air at ordinary wind-tunnel
+temperatures does not possess .  characteristics which involve the
+relaxation time (or bulk viscosity), the variation of viscosity with
+temperature, and the variation of specific heat with temperature fall
+within this category .  other applications arise in heat-transfer
+research since certain gas mixtures can be concocted to have any prandtl
+number in the range at least between 0.2 and 0.8 ."
+1.1561831	57	yes	"applicability of the hypersonic similarity rule to
+pressure distributions which include the effects of
+rotation for bodies of revolution at zero angle of
+attack .
+  the analysis of technical note 2250, 1950, is extended to include
+the effects of flow rotation .  it is
+found that the theoretical pressure
+distributions over ogive cylinders can be related by the hypersonic
+similarity rule with sufficient accuracy for most engineering purposes .
+  the error introduced into pressure distributions and drag of ogive
+cylinders by ignoring the rotation term in the characteristic equations
+is investigated .  it is found that
+the influence of the rotation term on
+pressure distribution and drag depends only upon the similarity
+parameter k (mach number divided by fineness ratio) .
+although the error in
+drag, due to neglect of the rotation term, is negligible at k=0.5, the
+error is about 30 percent at k=2.0 .
+  charts are presented for the rapid determination of pressure
+distributions for rotational flow over
+ogive cylinders for all values of
+the similarity parameter between 0.5 and
+of mach number and fineness ratio ."
+1.1571711	874	no	"the use of models for the determination of critical flutter speeds .
+the use of model tests in the prediction of full-scale critical flutter
+speeds is now well established, and the technique of such tests is
+therefore worthy of discussion . in order to obtain critical speeds for
+the model within the speed range of ordinary wind tunnels it is
+necessary that the model should differ in some respect from a mere small
+suggested by mckinnon wood the modification of the model consists in a
+reduction of its effective stiffnesses . this method has the defect /in
+most cases probably not serious/ that the model experiment is conducted
+at a reynolds number much below that for full-scale . in the present
+paper it is pointed out that an alternative method of reducing the
+critical speed is to increase the mass loading of the model and to make
+the flutter tests in compressed air . * it is then quite feasible to
+reach the full-scale reynolds number . this method of reducing the
+critical speeds by a proportionate increase of all effective densities
+may also be combined with a reduction of the elasticity of the model .
+the relation of model and full-scale stresses at the critical flutter
+speeds is considered . where the reduction in critical speed is effected
+ by increase of density only, the model and full-scale stresses are
+equal . in a model of reduced elasticity the stresses in the wires are
+the same as for full-scale,  whereas, the stresses in the spars are less
+ than for full-scale . this is in accord with the usual experience that
+the wires of such a model are the first parts of the structure to fail
+in a flutter .
+lastly, the influence of gravity on flutter is considered . this is
+negligibly small for full-scale, but not necessarily so for the model .
+gravitational effects can sometimes be corrected by suitable orientation
+ of the model ."
+1.1581293	1159	no	"experimental investigation of the effect of yaw on
+rates of heat transfer to transverse circular
+cylinders in a 6500-foot-per-second
+hypersonic air stream .
+a technique has been developed by which air can be shock-compressed
+by helium to 3660 degrees rankine to generate a 6500-foot-per-second
+air stream with a flow duration of 40 milliseconds .  the resulting
+equipment is described .  experiments were conducted to determine
+rates of heat transfer to transverse circular cylinders of 0.003-,
+greater than 100 .  the cylinders were tested at a nominal mach number
+of 11 with a stagnation reynolds number (evaluated with free-stream
+mass flow and stagnation viscosity of 4.00 times 10 to the 4th power
+per foot ."
+1.1589617	1161	no	"stagnation point heat transfer measurements in dissociated
+air .
+  the results of an experimental investigation of the laminar heat
+transfer at the stagnation point of a blunt body in partially
+dissociated air are presented and are compared to the theoretical
+treatment of fay and riddell .  heat-transfer results are
+presented for air temperatures as high as 8,000 k. where more than
+periments were performed in a shock tube and the new
+experimental techniques and principles are discussed briefly .
+simulation of flight stagnation conditions at velocities up to satellite
+velocity of 26,000 ft. sec. is shown to be possible in shock tubes and
+data has been obtained over a large altitude range at these
+velocities ."
+1.1594409	546	no	"measurements of aerodynamic heating on a 15 cone of
+graded wall thickness at a mach number of 6. 8.
+  this note describes transient wall
+temperature measurements made on a
+in an airstream of mach number 6.8 .
+  the skin of the model was
+sufficiently thin to allow it to reach zero
+heat transfer conditions within a
+running time of one minute .
+  in order to reduce effects
+of longitudinal heat conduction during a
+run the electroformed-nickel skin
+of the model was made with graded
+thickness, and as a result fairly
+uniform temperature distributions along
+the surface were obtained at all
+times in both the laminar and turbulent
+regions .
+  values of heat transfer, calculated from the wall temperature-time
+histories using the thin-wall
+temperature are compared to theoretical
+estimates using the intermediate
+enthalpy method 10, 11 ."
+1.160906	872	no	"fundamentals of boundary layer heat transfer with streamwise
+temperature variations .
+  boundary-layer heat transfer is analyzed for the case of a
+sinusoidal distribution of temperature in the direction of flow .  it is
+shown that for both laminar and turbulent flow the spatial
+distribution of heat transfer is generally out of phase with the wall
+temperature by an angle of 30 to 45 .  this leads to the
+conclusion that in some areas the heat flow is opposite to the
+temperature difference as used in the definition of the heat-transfer
+coefficient, and points to the basic shortcomings of this concept .
+the physical explanation for this behavior is found to be the
+temperature-field distortion by the fluid motion .  the distortion
+is measured by the peclet number .  approximate equations
+representing a /conduction analogy/ were used in this analysis
+and the validity of these equations for unsteady flow is examined
+with reference to limitations in frequency and wavelength .  a
+solution of these equations is given for the case of a velocity
+profile which is not a straight line .  the use of previously developed
+variational principles for the evaluation of convective heat
+transfer including cases of three-dimensional unsteady flow,
+turbulence, and nonparallel streamlines is also discussed ."
+1.1618485	1009	no	"free-flight measurements of the static and dynamic .
+  charts of thermodynamic properties for equilibrium air are presented
+with sufficient accuracy to permit the calculation of flow parameters in
+hypersonic nozzles operating at stagnation temperatures up to 4,950 r
+and pressures up to 1,000 atm .  flow parameters calculated from these
+charts are presented for a series of stagnation temperatures between
+use of these parameters, it is possible to calibrate a nozzle in the
+conventional way .  a method is also presented from which the flow
+parameters for conditions other than those chosen herein may be
+calculated .  real-gas effects on the calculation of a hypersonic nozzle
+contour are shown by an example calculation in which the nozzle contour
+for mach number 12 was determined by including real-gas effects, and
+this contour was compared with one calculated by ideal-gas
+considerations .  also presented are the approximate limiting mach
+numbers at which equilibrium air will just condense for various
+combinations of stagnation temperatures and pressures ."
+1.1641628	302	no	"approximations for the thermodynamic and transport properties of high
+temperature air .
+the thermodynamic and transport properties of high-temperature air are
+found in closed form starting from approximate partition functions for
+the major components in air and neglecting all minor components . the
+compressibility, enthalpy, entropy, the specific heats, the speed of
+sound, the coefficients of viscosity and of thermal conductivity, and
+the prandtl numbers for air are tabulated from 500degree to 15,000degree
+ k over a range of pressure from 0.0001 to 100 atmospheres . the energy
+of air and the mol fractions of the major components of air can be found
+ from the tabulated values for compressibility and enthalpy . it is
+predicted that the prandtl number for fully ionized air, which is in
+complete equilibrium, will become small compared to unity, the order of
+transparent to heat flux ."
+1.1651081	1307	no	"laminar heat-transfer and pressure measurements at
+a mach number of 6 on sharp and blunt 15 half-angle
+cones at angles of attack up to 90 .
+  two circular conical configurations
+having 15 half-angles were
+tested in laminar boundary layer at a
+mach number of 6 and angles of
+attack up to 90 .  one cone had a sharp
+nose and a fineness ratio of
+blunted nose with a bluntness ratio
+of 0.1428 and a fineness ratio of 1.66 .
+pressure measurements and
+schlieren pictures of the flow showed
+that near-conical flow existed up
+to an angle of attack of approximately
+near the base and the bow shock
+wave was considerably curved .
+  comparison of the results with
+simply applied theories showed that
+on the stagnation line pressures may
+be predicted by newtonian theory,
+and heat transfer by local yawed-cylinder
+theory based on the yaw angle
+of the windward generator and the local
+radius of the cone .  base effects
+increased the heat transfer in a region
+extending forward approximately
+circumferential pressure
+distributions were higher than the
+corresponding newtonian distribution
+and a better prediction was obtained
+by modifying the theory to match
+the pressure at 90 from the windward
+generator to that on the surface
+of the cone at an angle of attack of 0 .
+circumferential heat-transfer
+distributions were predicted satisfactorily
+up to about 60 from the
+stagnation line by using lees' heat-flux
+distribution based on the
+newtonian pressure .  the effects of nose
+bluntness at large angles of
+attack were very small in the region
+beyond two nose radii from the
+point of tangency ."
+1.1661355	202	no	"aircraft flutter .
+  the term flutter is used here to denote maintained or
+violent oscillations of a structure due to aerodynamic forces
+acting in conjunction with both elastic and inertial forces .
+attention is restricted to this particular branch of the more
+general field of aeroelasticity, which embraces buffeting,
+divergence, and reversal of control, as well as flutter,. airscrew
+flutter is not specifically considered .  the monograph is
+divided into three main parts, each of which has been made
+self-contained for the convenience of readers .
+  in the first part, general methods for the investigation
+of aircraft flutter, by theoretical analysis and by experiments
+on flutter models, are set out and discussed .  a detailed
+account of the aerodynamic theory of wings in non-uniform
+motion is not included, since this has already been provided
+elsewhere, but methods for the evaluation of the aerodynamic
+forces required in a theoretical flutter analysis are logically
+developed, and a bibliography of researches on the
+aerodynamic theory is given in the appendix .  investigations
+on specific types of aircraft flutter--namely wing flutter,
+control surface flutter, and tab flutter--are discussed in part
+these various types of flutter are considered, but the practical
+details of flutter-prevention devices are omitted .  finally,
+in part 3, methods for the experimental determination of
+airloads on oscillating aerofoil systems are described, and
+available airload measurements are analysed and compared
+with theoretical results .
+  an attempt has been made to refer in the text to all relevant
+british work reported by the early part of 1947 .  foreign
+work has been mentioned in parts 1 and 2 only where necessary
+for the sake of completeness, but in part 3 and the
+appendix all relevant foreign references known to the author have
+been included .
+  matrix notation has been used for the theoretical treatment in
+part 1, but otherwise its use has been avoided ."
+1.1682323	880	yes	"the design and testing of supersonic flutter models .
+the basic problems of flutter testing in the low supersonic speed range
+simulate full-scale airplanes when mach number is included as a
+parameter are reviewed and are compared with those where velocity is scaled
+when the leading edges become transonic,. these are compared with
+results given elsewhere and serve as a check on the results of tables
+i and ii ."
+1.1691402	20	no	"generalised-newtonian theory .
+  author generalizes lees's (amr 10(1957), rev. 2601)
+modification of newtonian theory for blunt-nose bodies to apply to pointed-
+nose bodies as well .  the result is expressed by
+sin where is the local inclination of the body
+surface and the subscript /max/ refers to the maximum local
+inclination and pressure coefficient .  for blunt-nose bodies
+and the generalized theory reverts to lees's blunt-nose
+modification with given by normal shock relations .  author shows,
+by comparison of newtonian and generalized-newtonian theory
+with exact solutions, the superiority of generalized-newtonian
+theory .  he also shows that both two-dimensional and
+axisymmetric shapes are correlated by this generalization .  results are
+presented in two figures that support author's generalization and
+indicate the independence of the correlation from variations in
+both the hypersonic similarity parameter k = m(d1) and the ratio
+of specific heats y .
+  reviewer believes this generalization should be of interest to
+those engaged in development of hypersonic hardware as well as
+theory ."
+1.1692334	52	yes	"procedure for calculating flutter at high supersonic
+speed including camber deflections, and comparison
+with experimental results .
+  a method which may be used at high supersonic mach numbers is
+described for calculating the flutter speed of wings having camber in
+their deflection modes .  the normal coupled vibration modes of the wing
+are used to derive the equations of motion .  chord deflections of the
+vibration modes are approximated by polynomials .  the wing may have a
+control surface and may carry external stores although no aerodynamic
+forces on the stores are presented .  the aerodynamic forces that are
+assumed to be acting on the wing are obtained from piston theory and
+also from a quasi-steady form of a theory for two-dimensional steady
+flow .  airfoil shape and thickness effects are taken account of in the
+analysis .
+  the method is used to calculate the flutter speed of some wings
+which had been previously tested at mach numbers of 1.3 to 3.0 .
+comparison of the calculations and experiment is made for flat-plate 60
+and 45 delta wings and also for an untapered 45 sweptback wing ."
+1.1752495	708	no	"aerodynamic characteristics of two winged reentry vehicles at supersonic
+ and hypersonic speeds .
+tests were conducted at the langley research center on two winged
+lifting hypersonic reentry glider configurations . performance, stability,
+and control data are presented at mach numbers of 1.62 and 2.91 for
+angles of attack up to 15degree and at mach numbers of 6.8 and 9.6 for
+angles of attack up to 25degree ."
+1.1755116	1191	no	"heat transfer to a hemisphere-cylinder at low reynolds
+numbers .
+  measurements of the local heat flux to
+hemisphere-cylinder models in a supersonic rarefied
+air stream are presented .  two different steady-state
+methods were developed, and five
+individual models were used .  data were obtained
+throughout the mach number range of 2 to 6,
+with reynolds numbers (based on conditions
+behind the bow shock and model diameter)
+varying from 38 to 1730 .  the stagnation point data
+indicated a gradual increase from continuum
+boundary layer theory at the higher reynolds
+numbers to about 10 above at the lower end
+of the range investigated .  pressure distribution
+measurements on cooled and uncooled models
+were found to agree well with modified newtonian
+theory .  local recovery factor
+measurements showed a small rarefaction effect at the
+lowest reynolds numbers ."
+1.1803936	980	no	"a method of computing the transient temperature of thick walls from
+arbitrary variation of adiabatic-wall temperature and heat-transfer
+coefficient .
+a method of calculating the temperature of thick walls has been
+developed in which are used relatively new concepts, such as the time
+series and the response to a unit triangle variation of surface
+temperature, together with essentially standard formulas for transient
+temperature and heat flow into thick walls . the method can be used
+without knowledge of the mathematical tools of its development . the
+method is particularly suitable for determining the wall temperature in
+one-dimensional thermal problems in aeronautics where there is a
+continuous variation of the heat-transfer coefficient and adiabatic-wall
+temperature . the method also offers a convenient means for solving the
+inverse problem of determining the heat-flow history when temperature
+history is known .
+a series of diversified problems were solved by exact analysis as well
+as by the new method . a comparison of the results shows the new
+method to be accurate . the labor involved is very modest in
+consideration of the nature of the thick-wall temperature problem .
+limiting solutions for the /infinitely thick/ wall and for walls so
+thin that thermal lag can be neglected were also obtained ."
+1.1811612	879	yes	"flutter model testing at transonic speeds .
+flutter research on reflection plane models of straight, swept, and
+delta wings in a 3 x 4 foot transonic test facility . techniques of
+model construction and testing developed ."
+1.1838127	1341	no	"investigation of wing flutter at transonic speeds for six systematically
+ varied wing plan forms .
+an investigation of the effects of systematic variations in wing plan
+form on the flutter speed at mach numbers between 0.73 and 1.43 has been
+ conducted in the 26-inch langley transonic blowdown tunnel . the angle
+of sweepback was varied from 0degree to 60degree on wings of aspect
+ratio 4, and the aspect ratio was varied from 2 to 6 on wings with
+experimental flutter speed and the reference flutter speed calculated on
+ the basis of incompressible two-dimensional flow . this ratio,
+designated as the flutter-speed ratio, is plotted as a function of mach
+number for the various wings . it is found that the flutter-speed ratio
+increased rapidly past sonic speed for sweep angles of 45degree and
+less, indicating a favorable effect of mach number . for sweepback of
+mach number range of the tests . reducing the aspect ratio had a
+favorable effect on the flutter-speed ratio which was of the order of 100
+percent higher for the aspect-ratio-2 wing than for the aspect-ratio-6
+wing . this percentage difference was nearly constant throughout the
+mach number range, indicating that the effect of mach number was about
+the same for all aspect ratios tested ."
+1.1855818	1379	no	"hypersonic flight and the re-entry problem .
+paper reviews the possibilities and some of the main problems of three
+types of long-range vehicle, the ballistic, the glide, and the skip
+rocket . performance assessments are made on the basis of an ingenious,
+if debatable, conversion of the vehicle characteristics to the breguet
+formula . the problems of aerodynamic heating, aerodynamic loads and
+stability are briefly discussed, and other aspects of hypersonic flight
+free molecule flow-dash are touched upon . the results on the whole
+favor the glide vehicle for manned flight . the subsequent discussion
+on the paper includes references to multistaging and the use of
+high-energy fuels ."
+1.1905977	1393	no	"heat transfer near the forward stagnation point of
+a body of revolution .
+in order to determine the temperature distribution over a
+body moving through the atmosphere, a knowledge of the
+local heat-transfer coefficients is required .  for slender
+sharp-nosed bodies, the heat-transfer coefficients are frequently
+approximated by using the comparable flat-plate values .
+however, for blunt-nosed bodies, flat-plate solutions are not
+applicable near the forward stagnation point .  since the greatest rate
+of heat transfer may occur at the forward stagnation point, its
+value should be investigated .  in this note a theoretical solution
+is given for the heat transfer near the forward stagnation point of
+a body of revolution assuming laminar, incompressible, low-speed
+flow .  the comparable solution for two-dimensional flow has
+been given by squire .  in the case of a blunt-nosed body moving
+with supersonic velocity, the flow behind the central portion of
+the bow wave is subsonic, and it is possible that a low-speed
+solution, using as /free-stream/ conditions those behind the center
+of the bow wave, will apply near the stagnation point ."
+1.1907533	1140	no	"shock-standoff distance for spherical bodies at high
+mach numbers .
+  usaf-sponsored development of a simple expression for
+shock-standoff distance, by consideration of an apropriate specific-heat
+ratio behind the shock .  the theory gives predictions which are
+almost as accurate as those of the van dyke and hays methods ."
+1.1911385	572	no	"boundary layer displacement and leading edge bluntness effects in high
+temperature hypersonic flow .
+two important features of hypersonic flow over slender or thin bodies
+are the displacement effect of the boundary layer and the large
+down-stream influence of leading-edge bluntness . the present paper
+contributes new theoretical and experimental results on this problem .
+the interaction of the two effects is treated theoretically by extending
+ the basic shock-layer concept . in the outer inviscid flow, a model
+consisting of a detached shock layer and an entropy layer is introduced
+to account for bluntness . in the boundary layer, the approximate
+solution is found to be governed by a local flat-plate similarity . under
+the assumption of a strong bow shock and a specific heat ratio close to
+unity, a theory is developed for an arbitrary thin body . for flat-plate
+ afterbodies, the theory yields a solution agreeing with blast-wave
+theory at one limit and strong-interaction theory at the other . within
+the framework of the present theory, the problems involving angle of
+attack are also analyzed . complementary to the above study, a
+hypersonic similitude involving strong shocks, but not requiring close to one
+ a natural comparison with experimental data correlated on the basis of
+this similitude .
+flat-plate experiments in air, conducted in the c.a.l. 11 x 15-dashin.
+hypersonic shock tunnel under cold-wall conditions, included measurement
+ of surface heat-transfer distributions and schlieren studies for zero
+and nonzero angle of attack . steady laminar heat-transfer rates were
+measured by means of thin-film resistance thermometers at air test-flow
+mach numbers around 12, free-stream reynolds numbers from 1.4 x 10 to 1.
+for most of the experiments, airflow stagnation temperatures ranged from
+ratios of about 0.15 . the range of test conditions at this stagnation
+temperature encompassed the limiting cases of dominant bluntness and
+dominant viscous-interaction effects . heat-transfer distributions were
+also measured on a sharp plate for air stagnation temperatures ranging
+from 2,000degreek up to 4,000degreek .
+the experimental data are quite well correlated in terms of the
+foregoing theoretical similitude variables characterizing combined effects
+of boundary-layer displacement and bluntness . the correlations obtained
+ suggest that for the present experimental conditions, at least, the
+hypersonic viscous similitude is valid even with leading-edge bluntness
+ in the paper, is generally fair ."
+1.1917017	566	no	"investigation of local heat transfer and pressure drag
+characteristics of a yawed circular cylinder at supersonic
+speeds .
+  local heat-transfer coefficients,
+temperature recovery factors, and
+pressure distributions were measured
+on a circular cylinder at a nominal
+mach number of 3.9 over a range of
+free-stream reynolds numbers from
+from 0 to 44 .
+  it was found that yawing the
+cylinder reduced the local heat-transfer
+coefficients, the average heat-transfer
+coefficients, and the pressure
+drag coefficients over the front side
+of the cylinder .  for example, at
+is reduced by 34 percent and the
+pressure drag by 60 percent .  the
+amount of reduction may be predicted by
+a theory presented herein .  local
+temperature recovery factors were also
+reduced by yaw, but the amount of
+reduction is small compared to the
+reduction in heat-transfer coefficients .
+  a comparison of these data with
+other data obtained under widely
+different conditions of body and stream
+temperature, mach number, and
+reynolds number indicates that these
+factors have little effect upon the
+dropoff of heat transfer due to yaw ."
+1.1976402	494	no	"axisymmetric viscous flow plast very slender bodies
+of revolution .
+  axisymmetric viscous flow past unyawed very slender bodies
+of revolution is treated within the category of the perfect gas .
+attention is paid especially to the effect of transverse curvature
+of the body .  from the transformed equations, the similarity
+conditions are deduced, and the parameter characterizing the
+effect of transverse curvature is obtained .  several numerical
+solutions of similarity equations for hypersonic flows are
+presented, and upon the basis of these results, the effect of the
+transverse-curvature parameter is discussed .  a method of
+applying the local-similarity approximation to obtain the
+approximate solution for nonsimilar cases is described, as are
+practical applications to incompressible flow past a long cylinder and
+to hypersonic flow past a very slender cone .  comparison with
+experimental results shows fair agreement with calculations using
+the local-similarity approximation in the present range of
+experimental flow conditions ."
+1.2012942	1061	no	"turbulent mixing of a rocket exhaust jet with a supersonic stream
+including chemical reactions .
+the equations for the turbulent mixing of a two-dimensional supersonic
+jet issuing into an ambient supersonic stream are formulated . both
+streams consist of a mixture of chemically active and possibly reacting
+gases, therefore any heat release by chemical reaction is included,. the
+ net mass rate of production of species is obtained on the assumption
+that the reaction rate constant is given by an expression reducible to
+the classical arrhenius law . the equations first given in terms of the
+x, and y coordinates, are expressed in dimensionless form and in terms
+of the x and coordinates, where is the stream function . the resulting
+expressions are all of the /heat conduction/ type,. they are put in a
+finite difference form by using the crank-nicolson method of
+substituting finite difference approximations for both the /time/ and /space/
+derivatives . the mixture is assumed to consist of six species, namely
+h2o, h2, o2, co2, co, and n2, and the oxidation of h2 and co is assumed
+to take place according to a single-step chemical reaction . the
+solution of the problem is based on the simultaneous solution of 8n linear
+algebraic equations in 8n unknowns, n being the number of internal grid
+points at every step in the x-direction, and 8 the total number of
+unknowns at each grid point, namely velocity, temperature, and
+concentration for each of the six species . a method of obtaining initial and
+boundary conditions from available inviscid jet flow solutions is
+discussed . the equations are programed for calculation on an ibm-704
+computer . finally, one typical case is considered, and plots of velocity,
+temperature, and concentration profiles are given for the initial stages
+ of development of the mixing layer ."
+1.2038743	877	no	"the influence of aerodynamic heating on the flexural
+rigidity of a thin wing .
+  this report considers the loss of flexural rigidity of a thin wing due
+to the presence of middle-surface stresses resulting from aerodynamic
+heating .  the spanwise properties of the wing are assumed constant but
+the wing section is arbitrary .  the loss of flexural rigidity is
+comparable with the corresponding loss of torsional rigidity ."
+1.2041297	861	no	"charts adapted from van driest's turbulent flat-plate
+theory for determining values of turbulent aerodynamic
+friction and heat transfer coefficients .
+  a modified method of van driest's flat-plate theory for turbulent
+boundary layer has been found to simplify the calculation of local
+skin-friction coefficients which, in turn, have made it possible to obtain
+through reynolds analogy theoretical turbulent heat-transfer
+coefficients in the form of stanton number .  a general formula is given and
+charts are presented from which the modified method can be solved for
+mach numbers 1.0 to 12.0, temperature ratios 0.2 to 6.0, and reynolds
+numbers 0.2 x 10 to 200 x 10 ."
+1.2082754	868	no	"design and operation of the n. g. t. e.  thermal shock
+analogue .
+  a description is given of the n.g.t.e. thermal shock analogue which
+is suitable for estimating the temperature in a turbine blade section as
+a function of position and time when the blade is subjected to a step
+change in gas temperature .  the method of operating the analogue and
+obtaining results has also been described .
+  the limitations of the analogue have been stated, but they are
+considered a small penalty in view of the essential simplicity of the
+design ."
+1.210145	564	no	"local heat transfer and recovery temperature on a yawed
+cylinder at a mach number of 4. 15 and high reynolds
+numbers .
+  local heat transfer, equilibrium temperatures,
+and wall static pressures have been measured on a
+circular cylinder at yaw angles of 0, 10, 20, 40,
+and 60 .  the reynolds number range of the tests
+was from 1x10 to 4x10 based on cylinder
+diameter .
+  increasing the yaw angle from 0 to 40 increased
+the stagnation-line heat-transfer coefficients by 100
+to 180 percent .  a further increase in yaw angle to
+heat-transfer coefficients .
+  at zero yaw angle the boundary layer over the
+entire front half of the cylinder was laminar but at
+yaw angles of 40 and 60 it was evidently completely
+turbulent, including the stagnation line, as
+determined by comparison of local heat-transfer coefficients
+with theoretical predictions .  the level of heating
+rates and the nature of the chordwise distribution
+of heat transfer indicated that a flow mechanism
+different from the conventional transitional boundary
+layer may have existed at the intermediate yaw angles
+of 10 and 20 .  at all yaw angles the peak
+heat-transfer coefficient occurred at the stagnation line
+and the chordwise distribution of heat-transfer
+coefficient decreased monotonically from this peak .
+  the average heat-transfer coefficients over the
+front half of the cylinder are in agreement with
+previous data for a comparable reynolds number
+range .
+  the theoretical heat-transfer distributions for
+both laminar and turbulent boundary layers are
+calculated directly from simple quadrature formulas
+derived in the present report ."
+1.2106724	68	no	"some aspects of air-helium simulation and hypersonic
+approximations .
+  some illustrations of the differences that may be expected between
+results obtained in hypersonic wind tunnels that employ air and results
+obtained in those that employ helium as the test medium (imperfect-gas
+effects are not considered) are compiled and presented herein .  simple
+expressions are presented that demonstrate the possibility of simulating
+air results in helium tests and of transforming helium data to
+equivalent air data .  nonviscous and viscous simulations are considered .  in
+most cases, the methods and the general forms of the expressions for
+simulation that are derived are applicable to any two ideal gases having
+different ratios of specific heats ."
+1.2122304	442	no	"some effects of variations in several parameters including
+fluid density on the flutter speed of light uniform
+cantilever wings .
+  an experimental investigation has been made of some effects of
+variations in several parameters, including fluid density, on the
+flutter characteristics of light uniform cantilever wings .  the
+assortment of wings tested covered a variety of positions of the elastic axis
+and center of gravity and values of the aspect ratio of 8, 6, and 4 .
+the relative-density parameter (where k is representative of the
+ratio of fluid density to wing mass) was varied over a range of values
+from 1.2 to nearly 14 .  special emphasis has been placed on the lower
+values .
+  the experimental investigation has been supplemented by an
+analytical investigation based on the two-dimensional aerodynamic theory for
+incompressible flow .  in a few instances corrections for the effects of
+finite span have been made .  in general, the theoretical results
+followed the trends indicated by experiment except at very low values of
+the relative-density parameter .  for these low values
+the analytical considerations employed indicated a freedom from flutter
+not found experimentally .  at higher values of the flutter-speed
+coefficient is shown to decrease with decreasing values of and
+to be nearly proportional to the inverse of the square root of the air
+density ."
+1.2124361	101	no	"laminar heat transfer over blunt-nosed bodies at hypersonic flight
+speeds .
+this paper deals with two limiting cases of laminar heat transfer over
+blunt-nosed bodies at hypersonic flight speeds, or high stagnation
+temperatures..  (a) thermodynamic equilibrium, in which the chemical
+reaction rates are regarded as /very fast/ compared to the rates of diffusion
+across streamlines., (b) diffusion as rate-governing, in which the
+volume recombination rates within the boundary layer are /very slow/
+compared to diffusion across streamlines .  in either case the gas density
+near the surface of a blunt-nosed body is much higher than the density
+just outside the boundary layer, and the velocity and stagnation
+enthalpy profiles are much less sensitive to pressure gradient than in the
+more familiar case of moderate temperature differences .  in fact, in
+case (a), the nondimensionalized enthalpy gradient at the surface is
+represented very accurately by the /classical/ zero pressure gradient
+value, and the surface heat-transfer rate distribution is obtained
+directly in terms of the surface pressure distribution .  in order to
+illustrate the method, this solution is applied to the special cases
+of an unyawed hemisphere and an unyawed, blunt cone capped by a
+spherical segment .
+in the opposite limiting case where diffusion is rate-controlling the
+diffusion equation for each species is reduced to the same form as the
+low-speed energy equation, except that the prandtl number is replaced
+by the schmidt number .  the simplifications introduced in case (a) are
+also applicable here, and the expression for surface heat transfer rate
+is similar., the maximum value of the ratio between the rate of heat
+transfer by diffusion alone and by heat conduction alone in the case of
+thermodynamic equilibrium is given by..  (prandtl no./schmidt no .)
+when the diffusion coefficient is estimated by taking a reasonable value
+of atom-molecule collision cross section this ratio is 1.30 .
+additional theoretical and (especially) experimental studies are clearly
+required before these simple results are accepted ."
+1.2131047	921	no	"slender-body theory-review and extension .
+the approximate theory of flow about slender bodies and wings originated
+ by munk and jones is reviewed . it is presented here in a form that
+emphasizes the relation to the source-sink methods of von karman and
+others . the extension to noncircular bodies is made for subsonic flow,
+paralleling ward's extension for supersonic flow . the calculation of
+pressures and forces and the extension of the theory to unsteady flows
+are reviewed, and some discrepancies in the published literature are
+explained .
+finally, interpreting the jones slender-wing result as the first term of
+ an expansion in powers of a breadth parameter /e.g., aspect ratio/, it
+is shown how a more accurate theory can be developed by carrying
+additional terms for both subsonic and supersonic speeds . this theory of
+not-so-slender wings is applied to some practical wing problems,
+including direct problems of flow past given wings and problems of wing
+design for minimum drag . the accuracy of the new results is assessed by
+ comparison with linearized supersonic-airfoil theory for the special
+case of a flat delta wing ."
+1.2169223	30	yes	"photo-thermoelastic investigation of transient thermal
+stresses in a multiweb wing structure .
+  photothermoelastic experiments were performed on a long
+multiweb wing model for which a theoretical analysis is available in
+the literature .  the experimental procedures utilized to simulate
+the conditions prescribed in the theory are fully described .
+  correlation of theory and experiment in terms of dimensionless
+temperature, stress, time, and biot number revealed that the
+theory predicted values higher than the experimentally observed
+maximum thermal stresses at the center of the web .  detailed
+temperature measurements in the flange suggested that the major
+source of this discrepancy can be traced to the one-dimensional
+heat conduction analysis of the flange employed in the theory ."
+1.218763	869	no	"the calculation of transient temperature in turbine
+blades and tapered discs using biot's variational method .
+  transient temperatures in aerofoil
+sections and tapered discs are
+calculated taking advantage of simplifications
+in heat flow analysis
+achieved in biot's variational method .
+cross-sections are represented by
+a line of adjacent squares of various
+sizes suitable for the local
+dimensions, e.g. small squares near the leading
+and trailing edges .  the
+potential, dissipation and surface dissipation
+functions of biot's method are
+set up, and the lagrange equations lead,
+by automatic procedures, to an
+eigenvalue formulation in matrix form for
+the temperatures and their first
+time derivatives .  solutions are sums
+of exponentials in time, and are
+evaluated by digital computer, requiring
+about five minutes for each
+cross-section and heat transfer coefficient .
+transient temperatures in a
+particular aerofoil section for variation
+of heat transfer coefficient and for
+external temperature depending exponentially
+on time agree with results
+obtained on an analogue computer .
+maximum transient temperature
+differences are evaluated for tapered discs
+by a simple electrical analogue) with
+variation of edge radius and heat
+transfer coefficient .  peculiarities
+in the solution for cyclic
+temperature external to an aerofoil over
+a range of frequencies indicate
+limitations in the mathematical formulation .
+a successful solution for cyclic
+external temperature might enable
+eigenvalues to be separated out in
+experimental measurements using
+electronic equipment, and this might be
+extended to exponential external
+temperature if a relationship between
+cyclic and exponential external
+temperature could be established .
+eigenvalues and eigenvectors as discrete
+values arise fictitiously from the
+sub-division into squares and the
+possibility of an integral formulation
+is mentioned .  there is a possible,
+but not immediate, extension to
+cooled blades, whose cross-sections
+are multiply-connected regions .
+transient stresses due to creep, and
+viscoelasticity might be included ."
+1.2191837	505	no	"transition measurements on cones in free flight ballistics
+range tests .
+  navy-sponsored experimental investigation of the location of
+boundary-layer transition on sharp-nosed cones having 10 total
+angles .  the ambient temperature in a portion of the aeroballistics
+range is varied so as to obtain different adiabatic recovery
+temperatures at a constant nominal mach number of 3.1 .  the location
+of transition is expressed as a transition reynolds number, and
+results are presented graphically as a function of the ratio between
+the wall temperature and the adiabatic recovery temperature ."
+1.2193942	914	no	"transtability flutter of supersonic aircraft panels .
+for certain aero-elastic configurations it is possible to ascertain
+critical flutter conditions from static considerations alone .  the
+idea is simply one of negation..  when the air speed exceeds a certain
+value statically stable equilibrium - and sometimes equilibrium itself
+take place .  there are times when the dynamics of a situation are
+complex enough to defy a tractable analysis .  the value of being able
+to indicate a flutter criterion from the simpler statics is clear .
+we will suppose flutter begins when some critical value of the air
+speed (or some parameter simply related the to) is exceeded .  here
+we will show that there is a critical value which, when exceeded,
+precludes static equilibrium .  underlying our work is the premise
+that these two critical values are the same .  this assumption begs
+discussion .
+we will call the lowest value of our air speed parameter to preclude
+statically stable equilibrium of the system the transtability value .
+in some cases, excess of this value will ban all possibility of
+static equilibrium - stable or not., we will then call it a strong
+transtability value ."
+1.2204224	982	no	"the temperature history in a thick skin subjected to laminar heating
+during entry into the atmosphere .
+during high speed entry into the earth's atmosphere, a vehicle can be
+afforded thermal protection for the short period of entry heating by a
+thick outer skin, sometimes called a /heat sink/ . the temperature
+distribution in such a heat sink has been found by integrating the
+product of the laminar aerodynamic heating rate and the appropriate
+green's function for a finite-thickness wall over the generalized
+trajectory for a vehicle entering the earth's atmosphere at high speeds
+dimensional heat conduction problem for laminar heating . the maximum
+surface temperature that occurs during the generalized entry trajectory
+for any combination of wall thickness and thermal properties is obtained
+from which the performance of any material can be found, provided that
+the average thermal properties may be used . as an example of the use of
+ the solution, the performance of copper, graphite, molybdenum and
+tungsten are compared ."
+1.2221524	294	no	"an investigation of laminar transitional and turbulent
+heat transfer on blunt-nosed bodies in hypersonic flow .
+  laminar, transitional, and turbulent heating rates have been
+measured by means of the shrouded model technique .  the
+reynolds number was varied over a ninefold range,. the enthalpy
+ratio (stagnation to wall) varied from 2.3 to approximately 1.5 .
+two different pressure distributions were imposed on the model
+which consisted of a spherically capped cone .
+  the experimental data are compared to the laminar hypersonic
+boundary-layer theory and shown to be in good agreement on the
+conical portion of the model .  on the spherical portion the data
+are approximately 20 per cent higher than the theoretical
+prediction .  some of this discrepancy can be attributed to radiation to
+the nose of the model .
+  the fully developed turbulent heat-transfer data are compared
+to two theories ..  (1) a relatively simple turbulent theory which is
+based on recent theoretical work and which takes into account
+the upstream history of the boundary layer, and (2) the flat-plate
+reference-enthalpy theory, which depends on only /local/
+conditions .  although both theories are in reasonable agreement with
+the data, the latter method is simpler and somewhat more
+accurate .
+  for transitional flow the theory mentioned first can be readily
+modified in order to permit reasonable estimates of transitional
+heat transfer to be obtained .  on this basis it is possible to
+estimate laminar, transitional, and fully developed turbulent heat
+transfer under hypersonic blunt-body conditions .
+  the behavior of transition reynolds number based on
+momentum thickness is also discussed and shown to be in quantitative
+agreement with recent shock-tube measurements ."
+1.2276977	685	no	"aerodynamic effects of some configuration variables
+on the aeroelastic characteristics of lifting surfaces
+at mach numbers from 0. 7 to 6. 86 .
+  results of flutter tests on
+some simple all-movable-control-type
+models are given .  one set of models,
+which had a square planform with
+double-wedge airfoils with four
+different values of leading- and
+trailing-edge radii from 0 to 6 percent chord
+and airfoil thicknesses of 9, 11,
+at mach numbers from 0.7 to 6.86 .
+the bending-to-torsion frequency
+ratio was about 0.33 .  the other set of
+models, which had a tapered planform
+with single-wedge and double-wedge
+airfoils with thicknesses of 3, 6, 9,
+and 12 percent chord, was tested
+at mach numbers from 0.7 to 3.98 and
+a frequency ratio of about 0.42 .
+  the tests indicate that, in general,
+increasing thickness has a
+destabilizing effect at the higher mach
+numbers but is stabilizing at
+subsonic and transonic mach numbers .
+double-wedge airfoils are more
+prone to flutter than single-wedge
+airfoils at comparable stiffness
+levels .  increasing airfoil bluntness
+has a stabilizing effect on the
+flutter boundary at supersonic speeds
+but has a negligible effect at
+subsonic speeds .  however, increasing
+bluntness may also lead to
+divergence at supersonic speeds .
+  results of calculations using
+second-order piston-theory aerodynamics
+in conjunction with a coupled-mode
+analysis and an uncoupled-mode analysis
+are compared with the experimental
+results for the sharp-edge airfoils at
+supersonic speeds .  the uncoupled-mode
+analysis more accurately predicted
+the flutter characteristics of the
+tapered-planform models, whereas the
+coupled-mode analysis was somewhat
+better for the square-planform models .
+for both the uncoupled- and coupled-mode
+analyses, agreement with the
+experimental results improved with
+increasing mach number .  in general,
+both methods of analysis gave unconservative
+results with respect to the
+experimental flutter boundaries ."
+1.2294879	499	no	"a closed-form solution for the oscillations of a vehicle
+entering a planetary atmosphere .
+  author considers the equation of the yawing motion of a missile,
+derived with a series of customary assumptions and with the
+distance traveled as the independent variable .  his assumptions
+include the linearity of the aerodynamic forces, the constancy of the
+aerodynamic coefficients with respect to mach number, the
+absence of spin, and the absence of gravity .  if to these assumptions
+one could add the common ballistic assumption of a constant air
+density, the coefficients of this equation would have been
+con-damped sinusoids .  in ballistics any slow variation of these
+coefstant, and the solution would have been simply the
+exponentially-ficients is usually treated by adding an approximate correction
+term to the damping rate (which is spoken of as the wkb
+perturbation) .  however, with a body entering the planetary atmosphere the
+variation of the air density is apparently of greater essence (this
+is a point not stated explicitly in this brief communication), and
+the equation is of the type .
+the author shows that with a series of further transformations
+the equation can be reduced to the form
+the solutions of which are confluent
+hypergeometric functions .  these functions are defined as series
+involving gamma functions, and with a series of further assumptions
+can be reduced to laguerre polynomials and bessel functions .
+  it is certainly nice to have an exact solution to a problem which
+has heretofore been extensively treated by approximations and by
+the numerical approach .  this reviewer is puzzled, however, as to
+the practical significance of the proposed approach .  an
+idealization is of value in that it facilitates our understanding,. and the
+numerical approach, in that it allows refinements of the problem,
+freeing us from the necessity of idealizing .  but the proposed
+solution is certainly more difficult to refine than the original
+problem,. and it is certainly not simple (the solution of the original
+equation is not the value of z, but the various /reverse/
+transformations of z) .  an evaluation of a series in practice must compete
+with the numerical approach,. and the equation suggested is of the
+zero) .  viewing the problem /afresh/ (in the light of the /
+computer revolution/ and without the constraints imposed by the prior
+art), it seems at least equally easy to /standardize/ the
+solutions of the original equation ."
+1.2304282	31	yes	"thermal buckling of supersonic wing panels .
+  the temperature and thermal stress distributions are analyzed
+in multicellular supersonic wing structures .  a buckling criterion
+is established for the panels of cover plates subjected to thermal
+stresses ."
+1.2309768	1188	no	"factors affecting lift-drag ratios at mach numbers
+from 5 to 20 .
+  yawed-cone working charts and an engineering
+method are presented and used to calculate
+lift-drag ratios of flat-top conical wing-body
+arrangements at mach numbers from 5 to 20 .
+viscous interaction effects are considered, but
+bluntness effects are neglected .  correlations
+of wind-tunnel data in the range
+show that boundary layer
+displacement corrections to surface pressure and skin
+friction are required to calculate lift-drag ratios
+by this method whenever
+is greater than 0.2 .  is the freestream mach
+number and is the freestream reynolds
+number based on body length .  double- and
+single-type shock patterns, transition from one
+pattern to the other, and the variation of inner-shock
+position with angle of attack are described .
+lift-drag ratios are calculated at selected flight
+design points for flat-top, conical body
+arrangements with triangular and hyperbolic wing
+planforms .  the hyperbolic wing arrangement
+offers a potential l d benefit at mach 5 but
+not at mach 10 or above ."
+1.2320303	390	no	"some panel-flutter studies using piston theory .
+  the use of piston theory was recently advocated for
+supersonic aeroelastic analyses, including the problem of panel flutter,
+and this has stimulated the investigation reported here .
+  linear piston theory is mainly considered, but some effects of
+introducing higher order terms are discussed .
+  flutter of rectangular simply supported panels and of
+elliptically shaped clamped-edge panels is considered, and some
+justification is provided for the use of /static/ aerodynamic forces
+and the neglect of aerodynamic damping .  hence, it is concluded
+that ackeret loading gives more exact results than piston theory .
+  solution of the flutter equations is made by applying galerkin's
+method to a rayleigh-type analysis using assumed modes of
+deformation ."
+1.2350254	86	no	"inviscid-incompressible flow theory of static peripheral
+jets in proximity to the ground .
+  an /exact/ flow theory of peripheral jets issuing
+symmetrically from a hovering aerial-ground vehicle is presented .  the
+theory is exact insofar as no simplifying assumptions have been
+made in obtaining a solution of the governing inviscid,
+two-dimensional hydrodynamical flow equations .  the results are
+valid for all jet thickness vehicle height ratios .  the limit of
+applicability of existing theories (very low thickness height
+ratios) are defined .  jet reaction, lift, and power coefficients for
+static conditions are introduced and computed .  lift
+augmentation and lift power ratios are also calculated .
+  applications to three-dimensional vehicles with rotational
+symmetry are indicated ."
+1.2375622	1289	no	"numerical technique to lifting surface theory for calculation
+of unsteady aerodynamic forces due to continuous sinusoidal
+gusts on several wing planforms at sobsonic speeds .
+  a numerical lifting-surface method has
+been used to calculate direct gust
+forces and moments on wings of several
+planforms .  the gust velocities are
+continuous and vary sinusoidally in the stream
+direction and are also uniform across
+the wing span .  the procedure has the
+advantage of rapid machine calculation and
+includes the effects of wing planform,
+nonsteady subsonic flow, and induced flow
+effects .  the method provides for calculation
+of gust forces on a basis
+consistent with that for the calculation of forces
+due to motion and deformation .  the
+results include the in-phase and quadrature
+components of the following
+quantities ..  (a) spanwise distribution of
+section lift coefficient, (b) total
+lift coefficient, and (c) total pitching-moment
+coefficient .  in addition,
+generalized gust forces on approximate fundamental
+cantilever bending modes (
+parabolic) are also included .  results have been
+obtained for 60 and 75 delta wings,
+ratio 11.60, and an unswept wing of aspect
+ratio 6.00 .  conditions for which
+calculations were made include two mach numbers
+reduced-frequency range of 0 to 1.0 .  the
+direct gust forces and moments are in
+forms suitable to be inserted in equations
+of motion used in the calculation of
+the dynamic responses of flexible lifting
+vehicles to random turbulence and to be
+compared with results from other methods ."
+1.2376876	919	no	"theoretical studies of unsteady transonic flow . part iii . the
+oscillating low aspect ratio rectangular wing .
+by expanding the velocity potential in an asymptotic series, the
+aerodynamic forces on an oscillating low aspect ratio rectangular wing are
+calculated . the approximate theory is valid for small values of ko /o
+semi-span-to-chord ratio,. k reduced frequency/ and complements an
+earlier low-aspect-ratio-wing theory by the author valid only for
+pointed wings like delta wings . the present report gives formulas for
+the calculation of generalized forces for any smooth, flexible or rigid
+mode of oscillation with spanwise symmetry .
+comparisons with the slender-wing theory show that, except for wings of
+very low aspect ratio, unsteady-flow effects are appreciable even at
+fairly low reduced frequencies . near the upper limit in ko for the
+applicability of the present theory good agreement is obtained with a
+recent theory for high aspect ratios ."
+1.2383118	1258	no	"heat transfer, recovery factor and pressure distributions
+around a circular cylinder normal to a supersonic rarefied
+air stream .
+  measurements of the heat transfer, recovery factor, and
+pressure distributions around a circular cylinder normal to a
+supersonic rarefied-air stream (total temperature 300 k.)
+are described for the mach number range of 1.3 to 5.7, the
+reynolds number range of 37 to 4,100 and at cylinder wall
+average temperature levels of 90 k. and 210 k .  study of the
+results yielded ..  (1) a correlation equation for the
+stagnation-point nusselt number as a function of the reynolds number just
+after the normal part of the detached bow shock wave,. and (2)
+fourier series expressions for the heat-transfer coefficient and
+pressure coefficient distributions in terms of the stagnation point
+values .
+  in comparing these measurements with predictions based on
+recent analytical studies, exceptionally good agreement for the
+heat-transfer coefficient distribution was obtained with lees'
+theory .  in the mach number range of 3.55 to 5.73 the
+pressure decreased less rapidly with distance from the stagnation point
+than predicted by the modified newtonian theory ."
+1.2412362	1106	no	"free-flight observation of a separated turbulent flow
+including heat transfer up to mach 8. 5.
+  a turbulent boundary layer separated
+by a forward-facing step was
+observed on the cylindrical portion
+of a hemisphere-cone-cylinder test
+vehicle .  tip blunting, producing a
+shear flow, was found to induce
+higher pressures on the cylindrical
+portion than were predicted from
+ballistic tunnel data of unblunted projectiles .
+an approximate method for
+predicting this blunt-body pressure
+distribution was hypothesized .  these
+findings, along with the hypothesis,
+were substantiated by a wind tunnel
+test of a similar body .  the peak pressure
+ratios of the separation were
+smaller in magnitude than flat plate
+theory predicted because of the
+effect of the shear flow .  the decrement
+in heating of the separated
+flow, relative to the corresponding
+attached flow, was found to compare
+well with the expected results ."
+1.2413678	1290	no	"measured and calculated subsonic and transonic flutter
+characteristics of a 45 sweptback wing planform in
+air and in freon-12 in the langley transonic dynamics
+tunnel .
+  in order to investigate the
+reliability of flutter data measured
+in the langley transonic dynamics
+tunnel, an experimental and theoretical
+subsonic and transonic flutter study
+has been conducted in air and in
+freon-12 in this facility .  the wing
+planform employed had an aspect
+ratio of 4.0, a taper ratio of 0.6,
+and 45 of quarter-chord sweepback .
+a sting-mounted full-span model was
+tested in addition to three sizes of
+wall-mounted semispan models .  a wide
+range of mass ratio was covered by
+the tests in air and by flutter
+calculations made by the modified
+strip-analysis method of naca research
+memorandum l57l10 .  a limited amount of
+data was obtained in freon-12 .
+  results of the tests in air
+and in freon-12 are in good agreement
+with the flutter calculations at
+all mach numbers .  the test data
+compare favorably with previously
+published transonic flutter data for the
+same wing planform .  the results
+indicate that flutter characteristics
+obtained in freon-12 may be interpreted
+directly as equivalent flutter
+data in air at the same mass ratio and mach number ."
+1.2414092	716	no	"study of the oscillatory motion of manned vehicles
+entering the earth's atmosphere .
+  an analysis is made of the oscillatory
+motion of vehicles which
+traverse arbitrarily prescribed trajectories
+through the atmosphere .
+expressions for the oscillatory motion
+are derived as continuous functions
+of the properties of the trajectory .
+  results are applied to a study of
+the oscillatory behavior of re-entry
+vehicles which have decelerations that
+remain within limits of human
+tolerance .  it is found that a deficiency of
+aerodynamic damping for such
+vehicles may have more serious consequences
+than it does for comparable
+ballistic missiles ."
+1.2425795	688	no	"tables of aerodynamic coefficients obtained from developed newtonian
+expressions for complete and partial conic and spheric bodies at
+combined angles of attack and sideslip with some comparisons with
+hypersonic experimental data .
+closed-form expressions and tables composed from these expressions are
+presented for complete and partial conic and spheric bodies at combined
+angles of attack and sideslip in newtonian flow . aerodynamic
+coefficients of these bodies are tabulated for various body segments
+over a range of angles of attack from 1degree to 85degree and angles of
+sideslip from 0degree to 15degree .
+some comparisons between newtonian predictions and hypersonic
+experimental aerodynamic characteristics were made for conic bodies
+having various surface slopes, nose bluntnesses, and body cross sections
+ to indicate the range of validity of the theory . in general, the
+theory is shown to agree quite well with experimental results for
+sharp-nose complete cones and for configurations having large blunted
+noses and steep surface slopes . however, agreement between theory and
+experiment generally is poor for the more slender, slightly blunted
+complete or half conic bodies and also for sharp-nose half conic bodies
+where real-flow phenomena such as forebody interference, viscous forces,
+ leeward surface contributions, or leading-edge pressure reductions may
+have significant effect . the agreement between theory and experiment
+for the bodies considered can be improved by using the stagnation
+pressure coefficient behind a normal shock rather than 2 as the newtonian
+coefficient, although for the sharp-nose half conic bodies there is no
+theoretical justification for this modification ."
+1.244036	538	no	"the conpressibility transformation and the turbulent
+boundary layer equations .
+  the compressibility transformation first introduced by
+dorod-nitzyn has been applied in this paper to the equations of the
+turbulent boundary layer on a flat plate, considering heat transfer
+and arbitrary prandtl numbers .  assuming the shear
+distribution to be invariant under the transformation, the stream
+function and the momentum equation take the proper form for
+incompressible flow, allowing the use of incompressible velocity
+profiles in the transformed coordinates .  application of crocco's
+method to the transformed energy equation permits integration
+of the energy equation resulting in a formulism remarkably
+similar to that proposed by eckert .  finally, the reference
+condition was chosen to correspond to the edge of the sublayer from
+considerations of the assumptions made regarding the
+shear-stress distribution .  with this choice, the reference enthalpy is in
+good agreement with eckert's formula over the ordinary range of
+test conditions .  in view of these results, the analysis may be
+considered to provide a theoretical basis for the
+reference-enthalpy method ."
+1.2444494	836	no	"analytical and experimental investigation of stress distributions in
+long flat plates subjected to lingitudinal loads and transverse
+temperature gradients .
+stress and strain distributions were studied in long flat plates in
+order to develop practical analytical procedures for the design
+analysis of aircraft structures at elevated temperatures .
+various load-temperature conditions are presented . these include ..
+methods of analysis for calculation of stress distributions under
+and plastic range,.
+ture .
+experimental verification of the analytical procedures is shown with
+comparisons between the use of constant room temperature or temperature
+dependent values of modulus of elasticity and coefficient of thermal
+expansion .
+the test specimen, equipment, instrumentation, and experimental program
+are discussed in detail . experimental data obtained from the specimen
+and associated material control coupon tests are presented ."
+1.2449932	1098	no	"an experimental investigation of ablating material
+at low and high enthalpy potentials .
+  the ablation performance characteristics
+of a number of materials
+were derived from tests conducted in
+a mach number 2.0 ethylene-heated
+high-temperature air jet having a
+maximum stagnation enthalpy potential
+of approximately 1,200 btu lb .  the
+tests were conducted with 6-
+inch-diameter blunt nose shapes .  the
+surface of most of the materials after
+testing was generally smooth and the
+unablated portions of the specimens
+were in appearance the same as before
+testing .  in all cases, the back
+or inside surface of the specimens
+exhibited no evidence of heating .
+  an evaluation of the enthalpy
+potential effect was obtained by
+comparison of the present data with
+previous tests conducted, on the
+in a subsonic arc-heated air
+jet .  the stagnation enthalpy potential
+of this facility was
+approximately 7,000 btu lb .  for teflon, the
+effective heat of ablation increased
+from approximately 1,250 btu lb to
+enthalpy potential was increased from"
+1.246831	1355	no	"boundary layer displacement effects in air at mach
+numbers of 6. 8 and 9. 6.
+  measurements are presented for pressure
+gradients induced by a laminar boundary layer on a
+flat plate in air at a mach number of 9.6 and for the
+drag of thin wings at a mach number of about 6.8
+and zero angle of attack .  the pressure
+measurements at a mach number of 9.6 were made in the
+presence of substantial heat transfer from the
+boundary layer to the plate surface .  the measured
+pressure distribution on the surface of the plate was
+predicted with good accuracy by a modification to
+insulated-plate displacement theory which allows
+for the effect of the heat transfer and temperature
+gradient along the surface on the boundary-layer
+displacement thickness .
+  the total drag of thin wings with square and delta
+plan forms was measured at a nominal mach number
+of 6.8 over a reasonably wide range of reynolds
+numbers .  the total drag was found to be greater
+than can be explained by adding a classical value of
+laminar skin friction to the estimated pressure drag .
+the difference is, in general, explained by the
+increase in skin friction (20 to 40 percent) caused by
+the boundary-layer-induced pressures ."
+1.246894	351	no	"thermal distributions in jeffrey-hamel flows between nonparallel plane
+walls .
+the authors give the exact solution for the thermal distributions for
+the steady laminar flow of a viscous incompressible fluid between
+non-parallel plane walls held at a constant temperature . the velocity
+profiles are determined with the aid of jacobian elliptic functions by
+using the jeffery-hamel solution of the hydrodynamic problem . it is
+shown that in this special case the energy equation giving the
+temperature profiles can be reduced to an ordinary linear differential
+equation with variable coefficients . after the introduction of
+dimensionless parameters, numerical solutions are given for diverging and
+converging channels with total openings of 10degree for the possible
+combinations of three reynolds numbers and five prandtl numbers ."
+1.2469084	1294	no	"non-linear shallow shell analysis by the matrix force
+method .
+  the matrix force method of redundant
+structure analysis is currently
+being extended by various users to cover
+a number of non-linear problems .
+one of these is the non-linear analysis
+of heated cambered wings, such as
+might be used in advanced flight vehicles .
+in this case the approach used
+by the present authors is equally applicable
+to shallow shells, the
+formulation of the strain-displacement and
+equilibrium relations being a
+finite element equivalent to that used
+by marguerre .  the solution is
+obtained by a combined iteration and step
+by step procedure utilizing a
+tangent flexibility matrix .  divergence
+in the calculations indicates
+that the range of stable configurations
+has been exceeded .  cambered
+plates subjected to several loadings are
+given as examples,. for one, an
+exact solution is available for comparison .
+  it is believed that the basic concepts
+involved in this shallow
+shell analysis can be extended to apply
+to other, more general shell
+instability problems, and that useful
+solutions to the latter are
+probably within the capability of present day digital computers ."
+1.2486804	509	no	"a graphical approximation for temperatures and sublimation rates at
+surfaces subjected to small net and large gross heat transfer rates .
+considers a material, acted upon by heat of conduction, which changes
+its state by sublimation at the heated surface . the derived method is
+most suitable under conditions of severe heating such as space vehicle
+re-entry ."
+1.2500777	630	no	"stagnation region in rarefied high mach number flow .
+  paper describes results of numerical solution of the viscous
+shock-layer equations for axisymmetric stagnation region, using
+the viscosity-temperature law with w=0.65, pr=0.71 and
+y=1.25 .  purpose is to establish applicability of the simple
+approximation of w=1 (obtained earlier) to air at low reynolds
+numbers and low ratios of wall temperature to stagnation
+temperature .  using a reference temperature (closely equal to
+eckert's) to interpret the linear results, excellent agreement is found,
+in the limit of, over a wide range of reynolds numbers,
+covering fully merged shock layers as well as boundary layers
+with and without vorticity interaction .  agreement with recent
+experiments of ferri et al is as good as to be expected from
+shock-layer approximation .  paper provides valuable extension of the
+applicability of the reference temperature concept ."

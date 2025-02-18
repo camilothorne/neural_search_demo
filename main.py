@@ -70,9 +70,9 @@ if __name__ == '__main__':
                                              f_ind_map, 
                                              v_db)
     # Save one example (debug)
-    df_ans_q.to_csv('results/' + c_test_query.replace(' ','_')  + '_faiss.tsv', 
+    df_ans_q.to_csv('results/' + c_test_query.replace(' ','_').replace('.','')  + 'faiss.tsv', 
                     sep='\t', index=False, escapechar='\\') 
-    df_ans_q.to_json('results/' + c_test_query.replace(' ','_') + '_faiss.json', 
+    df_ans_q.to_json('results/' + c_test_query.replace(' ','_').replace('.','') + 'faiss.json', 
                      index=False, orient='records', lines=True)
     print()
     print(query_eval_result.head(k))
@@ -91,9 +91,10 @@ if __name__ == '__main__':
                                                  c_merged_data, 
                                                  df_ans_q)
    # Save one example (debug)
-    df_r[['scores','rerank', 'relevant']].to_csv('results/' + c_test_query.replace(' ','_')  + '_faiss_cross.tsv', 
-                                                 sep='\t', index=False, escapechar='\\')
-    df_r.to_json('results/' + c_test_query.replace(' ','_') + '_faiss_cross.json', 
+    df_r[['scores','rerank', 'relevant']].to_csv(
+        'results/' + c_test_query.replace(' ','_').replace('.','') + 'faiss_cross.tsv', 
+        sep='\t', index=False, escapechar='\\')
+    df_r.to_json('results/' + c_test_query.replace(' ','_').replace('.','') + 'faiss_cross.json', 
                  index=False, orient='records', lines=True) 
     print()
     print(query_rerank_result.head(k))
