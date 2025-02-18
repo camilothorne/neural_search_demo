@@ -176,5 +176,5 @@ default_rerank = ReRanker()
 
 The model was fine-tuned on our custom Cranfield train split, that we modified with **negative** mining, i.e.,
 by randomly sampling an number of irrelevant document equal to the number of relevant documents available
-for each of its 152 queries (i.e. irrelavant documents $d$ are documents relevant for another query $q' \neq q$).
+for each of its 152 queries (i.e. irrelavant documents $d$ are documents relevant for another query $q^{'} \neq q$).
 Thereafter, around ~10% was used for validation. Please refer to `models/` for the datasets. 
