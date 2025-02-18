@@ -55,7 +55,7 @@ $$
 \text{idf}(t_i) = \ln \left(\frac{ |D| - n(t_i) + 0.5 } { n(t_i) + 0.5} + 1\right)
 $$
 
-with $n(t_i)$ the number of documents in $D$ where $t_i$ appears.
+with $n(t_i)$ the number of documents in $D$ where $t_i$ appears. In this demo, we rely on the [`bm25s`](https://github.com/xhluca/bm25s) implementation for Python.
 
 ### L2 (Euclidian) search
 
@@ -123,9 +123,7 @@ $$
 For the full results, please check the precision, recall and F1-score plots under `results/`. Here we give
 only a high-level summary at rank $k=5$, consisting of micro-averages for the five queries chosen as test set.
 
-BM25 and FAISS give somewhat similar results, even though the FAISS method is 2x slower. On the other hand, it supports queries with OOV terms.
-
-Interestingly, reranking with a pre-trained cross encoder (which increases latency > 2x) actually degrades results. By contrast, RRF significatly increases precision.
+BM25 and FAISS give somewhat similar results, even though the FAISS method is 2x slower. On the other hand, it supports queries with OOV terms. Interestingly, reranking with a pre-trained cross encoder (which increases latency > 2x) actually degrades results. Fine-tuning the cross-encoder (marked with * below) on our Cranfield training set didn't change performance scores either. By contrast, RRF does significatly increases precision.
 
 <div align="center">
 
@@ -135,6 +133,8 @@ BM25                    | 0.32     | 0.06     | 0.10
 FAISS                   | 0.32     | 0.06     | 0.10
 FAISS + cross-encoder   | 0.16     | 0.03     | 0.05
 BM25  + cross-encoder   | 0.20     | 0.03     | 0.06
+FAISS + cross-encoder*  | 0.20     | 0.04     | 0.06
+BM25  + cross-encoder*  | 0.16     | 0.03     | 0.05
 BM25  + FAISS + RRF     | 0.40     | 0.07     | 0.15
 
 </div>
