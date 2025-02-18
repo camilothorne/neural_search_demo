@@ -21,7 +21,8 @@ import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 
-torch.mps.set_per_process_memory_fraction(0.0)
+# Comment out if using an Apple M-series chip
+# torch.mps.set_per_process_memory_fraction(0.0)
 
 from  preprocessing.split_data import *
 
@@ -97,11 +98,11 @@ warmup_steps = math.ceil(len(train_dataloader) * num_epochs * 0.1)  # 10% of tra
 logger.info(f"Warmup-steps: {warmup_steps}")
 
 # Train the model
-# model.fit(
-#     train_dataloader=train_dataloader,
-#     evaluator=evaluator,
-#     epochs=num_epochs,
-#     evaluation_steps=100,
-#     warmup_steps=warmup_steps,
-#     output_path=model_save_path,
-# )
+model.fit(
+    train_dataloader=train_dataloader,
+    evaluator=evaluator,
+    epochs=num_epochs,
+    evaluation_steps=100,
+    warmup_steps=warmup_steps,
+    output_path=model_save_path,
+)

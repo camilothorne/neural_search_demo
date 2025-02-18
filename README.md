@@ -143,10 +143,30 @@ BM25  + FAISS + RRF     | 0.40     | 0.07     | 0.15
 
 You can reproduce these results by cloning this repository. We assume the reader to be proficient in Bash, and that he/she
 has installed and configured the Miniconda/Anaconda virtual environment and package manager. Thereafter it should suffice to type:
-
 ```bash
 conda create -n search_demo python=3.10.12
 conda activate search_demo
 pip install -r requirements.txt
 python main.py
+```
+
+To fine-tune the pre-trained cross-encoder type
+```bash
+python training/train_cross_encoder.py
+```
+It will write a checkpoint to `models/`. Note that this script will train a binary softmax classifier 
+over 'relevant/irrelevant' vs. a sigmoid classifer (resp. regression) model. 
+You'll have to override the reranker's default paramters to make it work, viz. write
+```python
+from neural_search.cross_encoder import ReRanker
+
+# You'll have to pass the local chackpoint path to the object
+# and indicate that it outputs a prediction pair 
+custom_rerank = ReRanker(path="./models/training_cranfield-2025-02-17_18-47-23", out_dim=2)
+```
+vs.
+```python
+from neural_search.cross_encoder import ReRanker
+
+default_rerank = ReRanker()
 ```
