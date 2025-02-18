@@ -174,7 +174,7 @@ from neural_search.cross_encoder import ReRanker
 default_rerank = ReRanker()
 ```
 
-The model was fine-tuned on our custom Cranfield train split, that we modified with **negative** mining, i.e.,
-by randomly sampling an number of irrelevant document equal to the number of relevant documents available
-for each of its 152 queries (i.e. irrelavant documents $d$ are documents relevant for another query $q\prime \neq q$).
-Thereafter, around ~10% was used for validation. Please refer to `models/` for the datasets. 
+The model was fine-tuned on our custom Cranfield train split, that we expanded with **negative** mining, i.e.,
+by randomly sampling, for every query $q$ in the training set, a number of irrelevant documents equal to its number of 
+explicitly relevant documents. In this context, we assume documents as irrelevant, when they are relevant for some 
+other query $q\prime \neq q$. Thereafter, around ~10% was used for validation. Refer to `models/` for the datasets.
