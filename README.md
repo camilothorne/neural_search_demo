@@ -159,14 +159,15 @@ over 'relevant/irrelevant' vs. a sigmoid classifer (resp. regression) model.
 You'll have to override the reranker's default paramters to make it work, viz. write
 ```python
 from neural_search.cross_encoder import ReRanker
-
-# You'll have to pass the local chackpoint path to the object
-# and indicate that it outputs a prediction pair 
+# You'll have to pass the local checkpoint path to the object
+# and indicate that it outputs a prediction pair (out_dim=2)
 custom_rerank = ReRanker(path="./models/training_cranfield-2025-02-17_18-47-23", out_dim=2)
 ```
 vs.
 ```python
 from neural_search.cross_encoder import ReRanker
-
+# The default args are:
+#     path=cross-encoder/stsb-distilroberta-base (a text similarity model)
+#     out_dim=1
 default_rerank = ReRanker()
 ```
