@@ -1,4 +1,4 @@
-# Neural search demo
+# Neural Search Demos
 In this repository, we demonstrate a number of key neural document search methods and concepts.
 Typical search systems, as studied in NLP are depicted by the diagram below. Their aim is to
 retrieve the set of all documents $d$ that are **relevant** or answer a given user question (a.k.a. "query") $q$.
