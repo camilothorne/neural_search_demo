@@ -17,10 +17,12 @@ from neural_search.rrf import RRF
 
 if __name__ == '__main__':
 
+
     # ************************************
     # Load dataset and instantiate objects
     # ************************************
-    
+
+
     num_test_queries = 5 # we use the 5 queries with most relevant documents for the test set
     c_merged_data = data_cranfield = load_cranfield() # load 
     c_train_data, c_test_data = split_data(data_cranfield, 
@@ -34,9 +36,11 @@ if __name__ == '__main__':
 
     f_rerank.example()
 
+
     # **********
     # Index data
     # **********
+
 
     # Update index (FAISS)
     f_ind_map = embedd_and_index_data(c_merged_data, v_db, v_enc)
@@ -53,9 +57,11 @@ if __name__ == '__main__':
     # Answer set size
     k = 100 # size of answer set
 
+
     # *********************
     # Test query evaluation
     # *********************
+
 
     # Evaluation on test query (FAISS)
     print('a) Sample query on FAISS\n')
@@ -130,7 +136,6 @@ if __name__ == '__main__':
     plt.yticks(fontsize=8)
     plt.savefig('results/bm25_cross_q.png')
 
-
     # Evaluation on test query (BM25 + FAISS + RRF)
     print('\ne) Sample query on BM25 + FAISS + RRF\n')
     q_rrf = RRF(df_ans_q_bm25, df_ans_q) # merge results and rerank
@@ -150,9 +155,11 @@ if __name__ == '__main__':
     plt.yticks(fontsize=8)
     plt.savefig('results/bm25_faiss_rrf_q.png')
 
+
     # **********************
     # Evaluation on test set
     # **********************
+
 
     # Evaluation across test set (FAISS)
     corpus_eval_result = corpus_eval_faiss(c_test_data,
@@ -198,7 +205,6 @@ if __name__ == '__main__':
     plt.yticks(fontsize=8)
     plt.savefig('results/faiss_cross_testset.png')
 
-
     # Evaluation across test set (BM25 + cross encoder)
     corpus_rerank_res_bm25 = corpus_rerank_bm25(c_test_data, 
                                                 f_rerank,
@@ -213,7 +219,6 @@ if __name__ == '__main__':
     plt.xticks(fontsize=8)
     plt.yticks(fontsize=8)
     plt.savefig('results/bm25_cross_testset.png')
-
 
     # Evaluation across test set (BM25 + FAISS + RRF)
     corpus_rerank_res_rrf = corpus_rerank_rrf(c_test_data, 
