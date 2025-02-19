@@ -4,7 +4,7 @@ from sentence_transformers.cross_encoder import CrossEncoder
 
 class ReRanker:
 
-    def __init__(self, path:str="cross-encoder/stsb-distilroberta-base", out_dim:int=1)->None:
+    def __init__(self, path:str, out_dim:int=1)->None:
         '''
         Instantiate model
         Args:

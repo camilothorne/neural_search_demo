@@ -70,6 +70,8 @@ that
 
 In this demo, we rely on a [sentence mebedding](https://www.sbert.net) model to vectorize $d$ and $q$, and
 [FAISS](https://faiss.ai/) to index and compute $Ans(q)$ using $k$ nearest neighbor L2 Euclidian search.
+As embedding model we use the 22M-parameter paragraph and short text encoder `sentence-transformers/all-MiniLM-L6-v2`
+(see [here](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)).
 
 Consider a $k$-dimensional embedding (vector representation) $\vec{q}$ of query $q$, and 
 a $k$-dimensional embedding $\vec{q}$ of document $d$.
@@ -84,9 +86,26 @@ $$
 ### Reranking with a cross-encoder
 
 A [cross-encoder](https://www.sbert.net/examples/applications/cross-encoder/README.html) is a 
-query-document pair (pre-trained) **classifier**, that returns $1$ when $d$ is relevant for $q$ and 0 otherwise.
-In practice, we're interested in the likelihood (softmax probabilty) of label $1$, and use it to re-rank
-(sort again) $Ans^r(q)$. As of 2025, variations of BERT are used for this purpose.
+query-document pair relevance **classifier**.
+In practice, we're interested in prediction likelihood vs predictions themselves, and use it to re-rank
+(sort again) $Ans^r(q)$. As of 2025, variations of BERT are used for this purpose. We experiment with three
+variations:
+
+<div align="center">
+
+|                  | Checkpoint                                | Size            |
+|-------           |---------------                            |-----------------|     
+|cross-encoder     | `cross-encoder/stsb-distilroberta-base`   | 82M parameters  |
+|cross-encoder*    | `cross-encoder/ms-marco-MiniLM-L-6-v2`    | 22M paramaters  |
+|cross-encoder**   | custom (see below)                        | 82M parameters  |
+
+</div>
+
+Where: 
+* `cross-encoder` is a (base) distilled RoBERTa model fine-tuned on the [STSB](https://huggingface.co/datasets/sentence-transformers/stsb) text similarity dataset, predicting
+a similarity score
+* `cross-encoder*` is a MiniLM --a short text and paragraph encoder model-- fine-tuned on the [MS-Marco](https://huggingface.co/datasets/microsoft/ms_marco) search dataset
+* `cross-encoder**` is (base) distilled RoBERTa fine-tuned on Cranfield
 
 ###  Reranking with reciprocal rank fusion
 
@@ -123,9 +142,19 @@ $$
 
 For the full results, please check the precision, recall and F1-score plots under `results/`. Here we give
 only a high-level summary at rank $k=5$, consisting of micro-averages for the five queries chosen as test set.
+For simplicity we omit any profiling comparisons.
 
-BM25 and FAISS give somewhat similar results, even though the FAISS method is 2x slower. On the other hand, it supports queries with OOV terms. Interestingly, reranking with a pre-trained cross encoder (which increases latency > 2x) actually degrades results. Fine-tuning the cross-encoder (marked with * below) on our Cranfield training set
-didn't change performance scores either. By contrast, RRF does significatly increases precision.
+BM25 and FAISS give somewhat similar results, even though the FAISS method is 2x slower. On the other hand, it supports queries with OOV terms. The best results are obtained as expected 
+when combining FAISS search with the MS-Marco-trained cross-encoder,
+with a difference of $+18$ precision points. This seems to be due to a) both the bi-encoder
+and cross-encoder operating in roughly the same embedding space (they are derived from the same
+base transformer) and b) a greater task similarity between MS-Marco and Cranfield.
+RRF increased precision by $+8$ precision points.
+
+On the other hand, reranking with the STSB-trained cross encoder degraded results. Likely because
+of misalignment between STSB and Cranfield, leading to underfitting.
+The same happened when using the cross-encoder fine-tuned on Cranfield, but this time
+likely due to over-fitting to its rather small training set.
 
 <div align="center">
 
@@ -135,8 +164,10 @@ BM25                    | 0.32     | 0.06     | 0.10
 FAISS                   | 0.32     | 0.06     | 0.10
 FAISS + cross-encoder   | 0.16     | 0.03     | 0.05
 BM25  + cross-encoder   | 0.20     | 0.03     | 0.06
-FAISS + cross-encoder*  | 0.20     | 0.04     | 0.06
-BM25  + cross-encoder*  | 0.16     | 0.03     | 0.05
+FAISS + cross-encoder*  | 0.48     | 0.09     | 0.15
+BM25  + cross-encoder*  | 0.40     | 0.07     | 0.13
+FAISS + cross-encoder** | 0.20     | 0.04     | 0.06
+BM25  + cross-encoder** | 0.16     | 0.03     | 0.05
 BM25  + FAISS + RRF     | 0.40     | 0.07     | 0.15
 
 </div>
@@ -152,7 +183,8 @@ pip install -r requirements.txt
 python main.py
 ```
 
-To fine-tune the pre-trained cross-encoder type
+We fine-tuned as cross-encoder a `distilbert/distilroberta-base` checkpoint.
+To run the fine tuning, type
 ```bash
 python training/train_cross_encoder.py
 ```
@@ -162,16 +194,17 @@ You'll have to override the reranker's default paramters to make it work, viz. w
 ```python
 from neural_search.cross_encoder import ReRanker
 # You'll have to pass the local checkpoint path to the object
-# and indicate that it outputs a prediction pair (out_dim=2)
+# and indicate that it outputs a prediction pair (`out_dim=2`)
+# as this model returns a tuple for every
 custom_rerank = ReRanker(path="./models/training_cranfield-2025-02-17_18-47-23", out_dim=2)
 ```
 vs.
 ```python
 from neural_search.cross_encoder import ReRanker
-# The default args are:
-#     path=cross-encoder/stsb-distilroberta-base (a text similarity model)
-#     out_dim=1
-default_rerank = ReRanker()
+# These two models return a scalar value for every query-sentence pair (`out_dim=1`)
+# but you don't need to indicate as `out_dim` is internally set to 1 by default
+pretrained_rerank_1 = ReRanker(path="cross-encoder/stsb-distilroberta-base")
+pretrained_rerank_2 = ReRanker(path="cross-encoder/ms-marco-MiniLM-L-6-v2")
 ```
 
 The model was fine-tuned on our custom Cranfield train split, that we expanded with **negative** mining, i.e.,

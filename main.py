@@ -31,8 +31,12 @@ if __name__ == '__main__':
     v_db  = FaissIndex(384) # FAISS index
     d_db  = BM25Index() # BM25 index
     v_enc = SentEncode() # sentence embedding
-    #f_rerank = ReRanker() # default cross encoder (for FAISS)
-    f_rerank = ReRanker(path="./models/training_cranfield-2025-02-17_18-47-23", out_dim=2) # custom cross encoder 
+
+    # Cross encoders:
+    #f_rerank = ReRanker(path="cross-encoder/stsb-distilroberta-base") # pretrained cross encoder 1
+    f_rerank = ReRanker(path="cross-encoder/ms-marco-MiniLM-L-6-v2")   # pre-trained cross encoder 2 
+    #f_rerank = ReRanker(path="./models/training_cranfield-2025-02-17_18-47-23", out_dim=2) # custom cross encoder 
+
 
     f_rerank.example()
 
