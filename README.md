@@ -61,12 +61,11 @@ with $n(t_i)$ the number of documents in $D$ where $t_i$ appears. In this demo, 
 ### L2 (Euclidian) search
 
 While BM25 is both effective and cheap to deploy, it has a major drawback, namely that it can't deal very well
-with synnonyms or out-of-vocabulary (OOV) terms and words. Meaning by this that if a user query uses terms that are not mentioned explicitly somewhere in the documents, $Ans^r(q)$ will contain few --if any-- relevant documents.
+with synonyms or out-of-vocabulary (OOV) terms and words. Meaning by this that if a user query uses terms that are not mentioned explicitly somewhere in the documents, $Ans^r(q)$ will contain few --if any-- relevant documents.
 
 To remedy this, conterporary search systems rely instead on **semantic search**. In semantic search, we use
-pre-trained deep learning embedding models (flavors of BERT encoder-only transformers) to map queries $q$ and documents $d$ into vectors in a common space. Search in this context consists in either minimizing the distance
-of $\vec{q}$ to $\vec{d}$, or maximizing their (cosine) similarity. The advantage of semantic search is
-that 
+pre-trained deep learning embedding models (flavors of BERT encoder-only transformers) to map queries $q$ and documents $d$ into vectors in a common space. 
+Search in this context consists in either minimizing the distance of $\vec{q}$ to $\vec{d}$, or maximizing their (cosine) similarity.
 
 In this demo, we rely on a [sentence mebedding](https://www.sbert.net) model to vectorize $d$ and $q$, and
 [FAISS](https://faiss.ai/) to index and compute $Ans(q)$ using $k$ nearest neighbor L2 Euclidian search.
